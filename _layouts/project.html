@@ -11,7 +11,37 @@ layout: default
 </section>
 
 <article class="wrap page-body project">
+{% if page.images %}
+  <div class="shots">
+  {% for im in page.images %}
+    <figure style="flex: {{ im.w | default: 1 }} 1 0">
+      <a href="{{ im.src | relative_url }}"><img src="{{ im.src | relative_url }}" alt="{{ im.alt | escape }}"></a>
+      {% if im.caption %}<figcaption>{{ im.caption }}</figcaption>{% endif %}
+    </figure>
+  {% endfor %}
+  </div>
+{% endif %}
+
+{% if page.what %}
+  <div class="whr">
+    <section>
+      <h2>What?</h2>
+      <ul>{% for x in page.what %}<li>{{ x | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>
+    </section>
+    <section>
+      <h2>How?</h2>
+      <ul>{% for x in page.how %}<li>{{ x | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>
+    </section>
+    <section>
+      <h2>Results</h2>
+      <ul>{% for x in page.results %}<li>{{ x | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>
+    </section>
+  </div>
+{% endif %}
+
+<div class="detail">
 {{ content }}
+</div>
 
   <nav class="pager">
     {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}"><span class="pager-label">Previous project</span> <span class="pager-title">{{ page.previous.title }}</span></a>{% else %}<span></span>{% endif %}

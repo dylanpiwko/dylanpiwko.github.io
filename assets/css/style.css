@@ -99,6 +99,22 @@ tr:nth-child(even) td { background: var(--tint); }
 .pager-title { display: block; font: 600 .98rem var(--sans); color: var(--navy); }
 .pager .next { grid-column: 2; text-align: right; }
 
+/* project pages: three pictures, then What / How / Results */
+.shots { display: flex; gap: 12px; align-items: flex-end; margin: 28px 0 6px; }
+.shots figure { margin: 0; min-width: 0; }
+.shots figure:only-child { max-width: 760px; margin: 0 auto; }
+.shots img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
+.shots figcaption { margin-top: .45em; }
+.whr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 26px 0 10px; padding: 18px 22px 20px; background: var(--tint); border-top: 3px solid var(--navy); }
+.whr h2 { font-size: 1.05rem; margin: 0 0 .45em; padding: 0; border: 0; }
+.whr ul { margin: 0; padding-left: 1.05em; font-size: .9rem; line-height: 1.5; }
+.whr li { margin: .4em 0; }
+.whr strong { color: var(--navy); }
+.detail > h2:first-child { margin-top: 1.8em; }
+
+/* home page: other work */
+.page-body h3 + p { margin-top: -.3em; font-size: .92rem; color: var(--muted); }
+
 /* footer */
 .site-footer { background: var(--navy); color: var(--light); font-size: .92rem; }
 .site-footer .wrap { padding-top: 26px; padding-bottom: 32px; }
@@ -113,6 +129,9 @@ tr:nth-child(even) td { background: var(--tint); }
   .hero h1 { font-size: 2.2rem; }
   .project-band h1, h1 { font-size: 1.8rem; }
   .cards { grid-template-columns: 1fr; }
+  .shots { flex-direction: column; align-items: stretch; }
+  .shots figure { flex: none !important; }
+  .whr { grid-template-columns: 1fr; gap: 6px; padding: 16px 18px; }
   .gallery-row { flex-direction: column; }
   .gallery-row img { height: auto; }
   table { display: block; overflow-x: auto; }
