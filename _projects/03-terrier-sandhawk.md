@@ -3,7 +3,7 @@ title: Terrier-Sandhawk Two-Stage Rocket
 dates: January 2025
 role: Builder and Flyer, Personal Project
 skills: RockSim · electronic staging · failure analysis
-summary: My first two-stage high-power rocket, with electronic staging. The flight failed, and the failure analysis changed how I build avionics.
+summary: 'My first two-stage high-power rocket is a LOC Precision 2.26" Sandhawk sustainer on a Terrier booster.'
 thumbnail: /assets/img/terrier/thumb.jpg
 permalink: /projects/terrier-sandhawk/
 ---

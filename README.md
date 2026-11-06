@@ -7,9 +7,10 @@ This is the source for my portfolio website. GitHub Pages builds it automaticall
 | To change | Edit this file |
 |---|---|
 | A project's text, figures or links | `_projects/<project>.md` |
-| Home page intro | `index.md` |
+| Home page About section | `index.md` |
+| Headline under your name | `headline:` in `_config.yml` |
 | Name, email, LinkedIn, phone, degree line | `_config.yml` |
-| Fonts, colors, spacing | `assets/css/style.css` |
+| Fonts, colors, spacing (navy colors are at the top) | `assets/css/style.css` |
 | Downloadable PDF | Replace `assets/Dylan_Piwko_Portfolio.pdf` (keep the same file name) |
 
 You can edit any of these on github.com: open the file, click the pencil icon, make the change, then click **Commit changes**.
