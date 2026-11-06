@@ -2,7 +2,7 @@
 title: NASA Ames Research Center, Aeropulse
 dates: June 2025 – August 2025
 role: Concept Design Intern, Aviation Systems Division
-skills: Systems design · UAS routing · airspace integration
+skills: Systems design, UAS routing, airspace integration
 summary: 'Our team of six designed Aeropulse, a concept for moving organs, lab samples, and urgent medicine between hospitals using hybrid VTOL drones and stair-climbing ground robots, with no manual handoffs.'
 thumbnail: /assets/img/nasa/thumb.jpg
 permalink: /projects/nasa-ames-aeropulse/

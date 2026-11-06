@@ -10,12 +10,12 @@
   <meta property="og:description" content="{% if page.summary %}{{ page.summary | strip_html | escape }}{% else %}{{ site.description | escape }}{% endif %}">
   <meta property="og:image" content="{{ site.url }}{% if page.thumbnail %}{{ page.thumbnail | relative_url }}{% else %}{{ '/assets/img/home/banner.jpg' | relative_url }}{% endif %}">
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
-      <a class="site-name" href="{{ '/' | relative_url }}"><span class="mark">DP</span>{{ site.title }}</a>
+      <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
       <nav>
         <a href="{{ '/' | relative_url }}#about">About</a>
         <a href="{{ '/' | relative_url }}#projects">Projects</a>
@@ -31,9 +31,9 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <p class="footer-name">{{ site.title }}</p>
-      <p>{{ site.degree }}</p>
-      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a>{% if site.phone and site.phone != "" %} · {{ site.phone }}{% endif %} · <a href="{{ site.linkedin }}">LinkedIn</a> · <a href="{{ site.pdf | relative_url }}">Portfolio PDF</a></p>
+      <p><strong>{{ site.title }}</strong><br>
+      {{ site.degree }}<br>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>{% if site.phone and site.phone != "" %}<br>{{ site.phone }}{% endif %}</p>
     </div>
   </footer>
 </body>

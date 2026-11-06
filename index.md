@@ -14,15 +14,8 @@ This fall, I joined a team of Embry-Riddle students in the EUROCONTROL PRC Data 
 I have worked mainly in SolidWorks, KiCad, Python, Microsoft Office, OpenRocket, and RockSim.
 
 I am looking for summer 2027 internships in GNC, unmanned systems, or systems engineering.
+You can reach me at [{{ site.email }}](mailto:{{ site.email }})
 
 <h2 id="projects">Projects</h2>
 
 {% include project-list.html %}
-
-<h2 id="contact">Contact</h2>
-
-<div class="contact-row">
-<a class="contact-card" href="mailto:{{ site.email }}"><span>Email</span>{{ site.email }}</a>
-<a class="contact-card" href="{{ site.linkedin }}"><span>LinkedIn</span>linkedin.com/in/dylan-piwko</a>
-<a class="contact-card" href="{{ site.pdf | relative_url }}"><span>Printable portfolio</span>Download PDF</a>
-</div>

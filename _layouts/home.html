@@ -4,14 +4,14 @@ layout: default
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <p class="eyebrow">Engineering Portfolio</p>
       <h1>{{ site.title }}</h1>
       <p class="headline">{{ site.headline }}</p>
-      <p class="hero-sub">{{ site.degree }} · {{ site.graduation }}</p>
-      <p class="hero-actions">
-        <a class="btn" href="#projects">View projects</a>
-        <a class="btn btn-ghost" href="{{ site.pdf | relative_url }}">Portfolio PDF</a>
-      </p>
+      <p class="hero-sub">{{ site.degree }}<br>{{ site.graduation }}</p>
+      <ul class="hero-links">
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><a href="{{ site.linkedin }}">LinkedIn</a></li>
+        <li><a href="{{ site.pdf | relative_url }}">Portfolio PDF</a></li>
+      </ul>
     </div>
     <figure class="hero-photo">
       <img src="{{ '/assets/img/home/banner.jpg' | relative_url }}" alt="My Terrier-Sandhawk two-stage rocket lifting off from pad B1.">
@@ -20,6 +20,6 @@ layout: default
   </div>
 </section>
 
-<div class="wrap page-body home-body">
+<div class="wrap page-body">
 {{ content }}
 </div>
