@@ -50,4 +50,5 @@ In flight, the drone keeps its map updated and fuses GPS, IMU, odometry, camera 
 
 ## Links
 
+- [Read the memo (PDF)](/assets/pubs/NASA-TM-20250009029.pdf)
 - [NASA/TM-20250009029 on the NASA Technical Reports Server](https://ntrs.nasa.gov/citations/20250009029)

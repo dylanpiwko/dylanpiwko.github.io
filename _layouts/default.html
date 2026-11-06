@@ -16,10 +16,10 @@
   <header class="site-header">
     <div class="wrap">
       <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <nav>
-        <a href="{{ '/' | relative_url }}#about">About</a>
-        <a href="{{ '/' | relative_url }}#projects">Projects</a>
-        <a href="{{ site.pdf | relative_url }}">PDF</a>
+      <nav aria-label="Main">
+        <a href="{{ '/' | relative_url }}#projects"{% if page.layout == 'project' %} aria-current="page"{% endif %}>Projects</a>
+        <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} aria-current="page"{% endif %}>Publications</a>
+        <a href="{{ site.pdf | relative_url }}">Portfolio PDF</a>
         <a href="{{ site.linkedin }}">LinkedIn</a>
       </nav>
     </div>
