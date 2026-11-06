@@ -4,26 +4,42 @@ Source for my portfolio site at https://dylanpiwko.github.io
 
 ## Editing
 
-- Projects: `_projects/` (one Markdown file per project, shown in file-name order)
-- About section: `index.md`
+- About and Other work: `index.md`
+- Projects: `_projects/` (one file per project, shown in file-name order)
 - Name, headline, email, LinkedIn: `_config.yml`
 - Colors and fonts: `assets/css/style.css`
 - PDF: replace `assets/Dylan_Piwko_Portfolio.pdf`, keeping the same name
 
-Sub-bullets are indented 4 spaces.
+## Project files
 
-## Images
+The block between the `---` lines at the top of each project file sets the card on the home page, the pictures at the top of the page and the What? / How? / Results lists:
 
-Add a figure:
+```yaml
+title: Kestrel Flight Computer
+role: Designer, Personal Project
+dates: October 2026 – Present
+skills: KiCad, PCB design, embedded C++, RF
+summary: One sentence for the home page card.
+thumbnail: /assets/img/kestrel/thumb.jpg
+images:
+- src: /assets/img/kestrel/kestrel_block.png
+  alt: What the picture shows
+  caption: Kestrel block diagram
+  w: 1.5        # optional: relative width when there are several pictures
+what:
+- First bullet
+how:
+- Use **double asterisks** for bold
+results:
+- ...
+```
+
+Put quotes around a line if it contains a colon followed by a space. Everything below the second `---` is normal Markdown (`## Heading`, paragraphs, `- bullets`, tables).
+
+## Figures in the page text
 
 ```liquid
 {% include figure.html src="/assets/img/kestrel/photo.jpg" alt="Description" caption="Caption" %}
 ```
 
-`width="600px"` keeps a small diagram from stretching. For photos side by side:
-
-```liquid
-{% include gallery.html images="/assets/img/a.jpg | /assets/img/b.jpg" alts="First | Second" height="300px" caption="Caption" %}
-```
-
-Card thumbnails are 800 × 500.
+Add `width="600px"` to keep a small diagram from stretching. Card thumbnails are 800 × 500.

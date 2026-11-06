@@ -13,6 +13,8 @@ url: "https://dylanpiwko.github.io"
 baseurl: ""
 
 markdown: kramdown
+plugins:
+  - jekyll-sitemap
 collections:
   projects:
     output: true

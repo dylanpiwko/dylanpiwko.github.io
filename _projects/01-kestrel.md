@@ -1,42 +1,38 @@
 ---
 title: Kestrel Flight Computer
-dates: September 2026 – Present
 role: Designer, Personal Project
+dates: October 2026 – Present
 skills: KiCad, PCB design, embedded C++, RF
-summary: 'Kestrel is a flight computer I''m designing for my 4-inch Wildman Punisher 4, the rocket I''m flying for my NAR Level 2 certification in January 2027.'
+summary: Flight computer for my 4" Wildman Punisher 4, which I'm flying for my NAR Level 2 certification in January 2027.
 thumbnail: /assets/img/kestrel/thumb.jpg
 permalink: /projects/kestrel/
+images:
+- src: /assets/img/kestrel/kestrel_block.png
+  alt: 'Kestrel block diagram: sensors, flash, GPS, LoRa radio and four pyro channels around an RP2350B, powered from a 9 V battery through a 3.3 V buck regulator'
+  caption: Kestrel block diagram
+what:
+- Flight computer for my 4" Wildman Punisher 4, which I'm flying for my NAR Level 2 certification in January 2027
+- It logs data and sends live telemetry, and will eventually handle dual-deployment recovery, including a later L2200G flight that simulates to about 14,800 ft and Mach 1.7
+how:
+- Designed the schematic and 4-layer board in **KiCad** (100 × 40 mm, 145 parts)
+- RP2350B microcontroller, IMU, high-g accelerometer, two barometers, magnetometer, u-blox GPS, 915 MHz LoRa radio and flash memory
+- Four pyro channels switched on both the high and low side, behind a physical arming switch
+- 9 V input with reverse protection and a TPS54202 buck converter for 3.3 V
+- Wrote bring-up firmware and a desktop ground station with a live map
+results:
+- Zero ERC/DRC errors, with every part checked pin by pin against its datasheet and Raspberry Pi's reference design
+- Fixed everything an outside schematic review flagged
+- PCBWay is building the boards through their Future Innovators sponsorship
+- My commercial altimeters keep handling recovery until Kestrel passes ground and flight tests
 ---
 
-## Overview
-
-Kestrel is a flight computer I'm designing for my 4-inch Wildman Punisher 4, the rocket I'm flying for my NAR Level 2 certification in January 2027. It logs flight data, sends live telemetry and is built to eventually run dual-deployment recovery, including on a later L2200G flight that simulates to about 14,800 ft and Mach 1.7. The four-layer, 100 × 40 mm board has 145 parts and is being made by PCBWay through their Future Innovators sponsorship.
-
-## Individual responsibilities
-
-- Designed the schematic and four-layer PCB in KiCad
-    - RP2350B microcontroller with an IMU, high-g accelerometer, two barometers, magnetometer, u-blox GPS, 915 MHz LoRa radio and flash logging
-    - Four pyro channels switched on the high and low side behind a physical arming switch
-    - 9 V input with reverse protection, regulated to 3.3 V by a TPS54202 buck converter
-- Verified the design before ordering, since my budget allows one board revision
-    - Checked every part pin by pin against its datasheet and Raspberry Pi's reference design
-    - Reached zero KiCad ERC/DRC errors and fixed the items an outside review flagged
-- Developed bring-up firmware and a desktop ground station with a live map and pyro continuity
-- Planned a staged flight program that keeps commercial altimeters in charge of recovery until Kestrel passes ground and flight tests
-
-{% include figure.html src="/assets/img/kestrel/kestrel_block.png" alt="Kestrel block diagram: sensors and flash on SPI and I2C into an RP2350B; GPS, LoRa radio and four pyro channels behind an arming switch; 9 V battery to a 3.3 V buck regulator." caption="System block diagram. The pyro channels draw power through the arming switch." %}
-
-## Design details
-
-### Pyro channel safety
+## Design and verification
 
 Each pyro channel switches the e-match on both its high side and its low side, behind a physical arming switch on the airframe. A charge can only fire when the switch is closed and the processor turns on both transistors. Pull-down resistors hold every gate off while the processor boots, and a small sense current through each e-match shows continuity without firing it.
 
-{% include figure.html src="/assets/img/kestrel/kestrel_pyro.png" alt="One pyro channel: 9 V supply, arming switch, high-side MOSFET on GPIO A, e-match, low-side MOSFET on GPIO B, ground." caption="**Figure 1.** *One of four pyro channels. Three independent conditions must all be true to fire.*" %}
+{% include figure.html src="/assets/img/kestrel/kestrel_pyro.png" alt="One pyro channel: 9 V supply, arming switch, high-side MOSFET, e-match, low-side MOSFET, ground" caption="One of the four pyro channels" %}
 
-### Verification before ordering
-
-Because I can only afford one board revision, I checked each subsystem against a datasheet or reference design before ordering, and planned a specific test to prove it once the boards arrive.
+Because my budget allows one board revision, I checked each subsystem against a datasheet or reference design before ordering, and planned a specific test to prove it once the boards arrive.
 
 | Subsystem | Checked against | Proven at bring-up by |
 |---|---|---|
@@ -47,6 +43,8 @@ Because I can only afford one board revision, I checked each subsystem against a
 | Pyro | MOSFET ratings, gate drive, boot pull-downs | Dummy-load tests, armed and disarmed |
 | Layout | Zero ERC/DRC errors; outside review; PCBWay engineering review | Visual inspection of both assembled boards |
 
-### Flight plan
+## Test plan
 
 On the first flight Kestrel only logs and transmits, while a Featherweight Blue Jay and an EasyMini handle recovery. Before it controls a parachute, its would-fire times from flight 1 have to match the commercial altimeters, it has to fire correctly on replayed simulated L2200G flights and never during the Mach transition, and it has to pass vacuum-chamber, inert-load and ground ejection tests.
+
+{% include figure.html src="/assets/img/kestrel/kestrel_test_program.png" alt="Four stages: bench bring-up, flight 1 for the L2 cert with Kestrel logging only, qualifying recovery, then Kestrel in control on the L2200G flight" caption="Test plan before Kestrel controls recovery" %}

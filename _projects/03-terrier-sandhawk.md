@@ -1,38 +1,55 @@
 ---
 title: Terrier-Sandhawk Two-Stage Rocket
-dates: January 2025
 role: Builder and Flyer, Personal Project
+dates: January 2025
 skills: RockSim, electronic staging, failure analysis
-summary: 'My first two-stage high-power rocket is a LOC Precision 2.26" Sandhawk sustainer on a Terrier booster.'
+summary: My first two-stage high-power rocket, with electronic staging and a sustainer air-start.
 thumbnail: /assets/img/terrier/thumb.jpg
 permalink: /projects/terrier-sandhawk/
+images:
+- src: /assets/img/terrier/rocksim_original.png
+  alt: RockSim plot of velocity and altitude against time for the Terrier-Sandhawk
+  caption: RockSim simulation
+  w: 1.29
+- src: /assets/img/terrier/pad_prep.jpg
+  alt: Setting the rocket up on pad B1
+  caption: Setting up on pad B1
+  w: 0.82
+- src: /assets/img/terrier/liftoff_crop.jpg
+  alt: Liftoff from pad B1
+  caption: Liftoff
+  w: 0.76
+what:
+- My first two-stage high-power rocket, a LOC Precision 2.26" Sandhawk sustainer on a Terrier booster (76.9 in, 2,078 g)
+- Flew it on a Cesaroni I297 and H180 at Michiana Rocketry on January 31, 2025
+how:
+- Built the avionics for electronic staging, sustainer air-start, GPS tracking and telemetry. The stages separate 1.0 s after booster burnout and the sustainer lights 0.7 s later
+- Simulated the flight in **RockSim** to choose motors and check stability (2.40 static margin)
+- Analyzed how the 0.7 s ignition delay, which RockSim doesn't model, changes the trajectory using a 2-D point-mass model
+results:
+- The delay raised predicted apogee from about 6,590 ft to 6,860 ft
+- On the flight the stages didn't separate properly, the sustainer never lit and the upper stage was lost
+- Both 9 V batteries were on one sled that most likely slid under boost and disconnected them, which taught me the importance of redundant avionics
 ---
 
-## Overview
+## Failure analysis
 
-My first two-stage high-power rocket is a LOC Precision 2.26" Sandhawk sustainer on a Terrier booster, flown on a Cesaroni I297 Skidmark in the booster and an H180 Skidmark in the sustainer. It is 76.9 in long and 2,078 g at liftoff. Because composite motors can't reliably light an upper stage on their own, staging is electronic: the stages separate 1.0 s after booster burnout and the sustainer lights 0.7 s later, once the booster has fallen away. I flew it at Michiana Rocketry on January 31, 2025.
+The stages didn't separate properly and the sustainer never lit. Since both happened on the same flight, I looked for something that could cause both.
 
-## Individual responsibilities
+Every flight computer ran on a 9 V battery, and all of the batteries were mounted to the same sled, which wasn't secured well enough. Under boost acceleration the sled most likely slid down the airframe and disconnected both batteries, so all of the electronics lost power at once.
 
-- Built the rocket and its avionics for electronic separation, sustainer air-start, GPS tracking and telemetry
-- Simulated the flight in RockSim to pick motors and check stability (2.40 static margin)
-- Analyzed how the 0.7 s ignition delay changes the trajectory (see the write-up below)
-- Investigated why the flight failed
-    - The stages didn't separate properly, the sustainer never lit, and the upper stage was not recovered
-    - Every flight computer ran on a 9 V battery mounted to one sled that wasn't secured well enough; the sled most likely slid down the airframe under boost acceleration and disconnected both batteries
+{% include figure.html src="/assets/img/terrier/terrier_fault_tree.png" width="560px" alt="Fault tree: upper stage lost, from no separation and no sustainer ignition, from both flight computers losing power, from both 9 V batteries disconnecting, from the shared sled sliding under boost" caption="How one loose sled led to both failures" %}
 
-**Lesson:** This flight taught me the importance of redundant avionics systems. Both batteries were on the same sled, so one mounting problem took out all of the electronics at once.
+This flight taught me the importance of redundant avionics systems. Having more than one flight computer didn't help, because they all depended on the same mount.
 
-{% include gallery.html images="/assets/img/terrier/pad_prep.jpg | /assets/img/terrier/liftoff_crop.jpg | /assets/img/terrier/hero_climb.jpg" alts="Setting the rocket up on pad B1. | Liftoff from pad B1. | Climbing on the booster." height="320px" caption="(L to R): Setting up on pad B1, liftoff on the I297 booster, climbing before staging" %}
+## Staging delay analysis
 
-{% include figure.html src="/assets/img/terrier/rocksim_profile.png" alt="RockSim side view: sustainer and nose cone on the left, booster with orange fins on the right." caption="RockSim model: sustainer on the left, booster on the right (CG 52.5 in, CP 57.9 in from the nose)" %}
-
-## Sample write-up: effect of the sustainer ignition delay
+{% include figure.html src="/assets/img/terrier/rocksim_profile.png" alt="RockSim side view: sustainer and nose cone on the left, booster with orange fins on the right" caption="RockSim model, sustainer on the left (CG 52.5 in, CP 57.9 in from the nose)" %}
 
 RockSim lights the sustainer at the moment the stages separate, so its prediction does not include the 0.7 s wait before sustainer ignition. To model the actual sequence, the upper stage was re-flown from separation with a two-dimensional point-mass model. The sustainer's drag-to-mass ratio was taken from RockSim's coast phase as a function of Mach number, and its ignition mass was fitted to the boost phase using the H180's certified thrust curve. Run with RockSim's own timing, the model matches RockSim's apogee within 3 ft and its peak speed within 0.3%.
 
-{% include figure.html src="/assets/img/terrier/terrier_rocksim_style.png" alt="Velocity and altitude against time with lines for booster burnout, separation, sustainer ignition, sustainer burnout, apogee and ejection." caption="**Figure 1.** *Predicted flight with the 1.0 s separation and 0.7 s ignition delays, in RockSim's plot format.*" %}
+{% include figure.html src="/assets/img/terrier/terrier_rocksim_style.png" alt="Velocity and altitude against time with lines for booster burnout, separation, sustainer ignition, sustainer burnout, apogee and ejection" caption="Predicted flight with the 1.0 s separation and 0.7 s ignition delays" %}
 
 With the delay, the sustainer lights at 347 mph instead of 415 mph and peaks at 756 mph instead of 775 mph. Less of the burn happens near Mach 1, where drag is highest, so the predicted apogee rises from about 6,590 ft to 6,860 ft. A 10% change in drag moves this by about 300 ft. Because the sustainer never lit on this flight, the prediction couldn't be checked against flight data.
 
-{% include figure.html src="/assets/img/terrier/terrier_staging_compare.png" width="620px" alt="Velocity from 1 to 6.5 seconds for the RockSim run and for the sequence with the delay." caption="**Figure 2.** *Staging close-up: RockSim's run (gray) against the delayed ignition (blue).*" %}
+{% include figure.html src="/assets/img/terrier/terrier_staging_compare.png" width="620px" alt="Velocity from 1 to 6.5 seconds for the RockSim run and for the sequence with the delay" caption="RockSim (gray) vs. delayed ignition (blue)" %}

@@ -19,3 +19,20 @@ You can reach me at [{{ site.email }}](mailto:{{ site.email }})
 <h2 id="projects">Projects</h2>
 
 {% include project-list.html %}
+
+<h2 id="other">Other work</h2>
+
+### Firefly Aerospace, Eclipse catch recovery
+*Perot Jain TechLab, starting January 2027*
+
+I was selected to work with Firefly Aerospace on the catch recovery system for the Eclipse launch vehicle.
+
+### High-power rocketry
+*April 2023 – Present*
+
+I hold a NAR Level 1 certification and have designed, built and flown high-power rockets with multistage designs, clustered motors and dual-deployment recovery. In March 2024 I flew a 3" MAC Performance Black Fly on a CTI I223SK to about 3,500 ft at Michiana Rocketry, my first flight with head-end dual deployment controlled by avionics.
+
+### RC aircraft and vehicles
+*April 2024 – August 2026*
+
+I've built, set up and flight-tested electric ducted-fan and fixed-wing RC aircraft. On an RC car, I went from a 2S to a 4S lithium battery and changed the gearing, which raised top speed by about 50%.
