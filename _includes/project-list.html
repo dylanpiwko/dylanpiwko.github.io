@@ -3,9 +3,11 @@
 <a class="card" href="{{ p.url | relative_url }}">
 <img src="{{ p.thumbnail | relative_url }}" alt="" loading="lazy">
 <span class="card-text">
+<span class="card-meta">{{ p.dates }}</span>
 <span class="card-title">{{ p.title }}</span>
-<span class="card-meta">{{ p.role }}&ensp;·&ensp;{{ p.dates }}</span>
+<span class="card-role">{{ p.role }}</span>
 <span class="card-summary">{{ p.summary }}</span>
+<span class="card-more">Read more →</span>
 </span>
 </a>
 {%- endfor %}

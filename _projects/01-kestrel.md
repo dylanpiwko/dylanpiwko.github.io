@@ -3,7 +3,7 @@ title: Kestrel Flight Computer
 dates: September 2026 – Present
 role: Designer, Personal Project
 skills: KiCad · PCB design · embedded C++ · RF
-summary: A four-layer rocket flight computer I'm designing for my NAR Level 2 rocket, with GPS, LoRa telemetry and four armed pyro channels.
+summary: 'Kestrel is a flight computer I''m designing for my 4-inch Wildman Punisher 4, the rocket I''m flying for my NAR Level 2 certification in January 2027.'
 thumbnail: /assets/img/kestrel/thumb.jpg
 permalink: /projects/kestrel/
 ---
