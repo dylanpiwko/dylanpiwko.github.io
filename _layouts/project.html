@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article class="project">
+  <p class="back"><a href="{{ '/' | relative_url }}#projects">← All projects</a></p>
+  <h1>{{ page.title }}</h1>
+  <p class="meta">{{ page.role }}&ensp;·&ensp;{{ page.dates }}</p>
+  {% if page.skills %}<p class="skills">{{ page.skills }}</p>{% endif %}
+
+{{ content }}
+
+  <nav class="pager">
+    {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}
+  </nav>
+</article>
