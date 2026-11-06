@@ -1,29 +1,17 @@
-# ---------------------------------------------------------------
-# Site settings. Change these to update your name and contact
-# info everywhere on the site at once.
-# ---------------------------------------------------------------
 title: Dylan Piwko
 description: Engineering portfolio of Dylan Piwko, aerospace engineering student at the University of Michigan.
-degree: B.S.E. Aerospace Engineering, University of Michigan
-graduation: Expected May 2030
-# Shown under your name on the home page (same as your LinkedIn headline)
 headline: "Aerospace Engineering @ University of Michigan | Former NASA Ames Intern | Autonomy, GNC, Systems Engineering"
+degree: B.S.E. Aerospace Engineering, University of Michigan
+graduation: "Expected Graduation: May 2030"
 
 email: dpiwko@umich.edu
 linkedin: https://www.linkedin.com/in/dylan-piwko
-# Leave phone empty to keep it off the public site, or add it in quotes, e.g. "(269) 555-0100"
 phone: ""
-# The downloadable PDF in the assets folder. Replace the file to update it.
 pdf: /assets/Dylan_Piwko_Portfolio.pdf
 
-# Leave both empty for a site at https://<your-username>.github.io
-# If the repository has another name (e.g. "portfolio"), set baseurl: /portfolio
 url: "https://dylanpiwko.github.io"
 baseurl: ""
 
-# ---------------------------------------------------------------
-# Jekyll settings. You shouldn't need to change anything below.
-# ---------------------------------------------------------------
 markdown: kramdown
 collections:
   projects:

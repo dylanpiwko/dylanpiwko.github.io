@@ -2,7 +2,7 @@
 title: EUROCONTROL PRC Data Challenge
 dates: September 2026 – October 2026
 role: 'Team Member, Embry-Riddle Aeronautical University team "merry-llama"'
-skills: Python · LightGBM · CatBoost · SHAP
+skills: Python, LightGBM, CatBoost, SHAP
 summary: 'My work on Embry-Riddle''s team predicting taxi-out times at 10 European airports. Added CatBoost models, departure-queue features, and an airside estimate.'
 thumbnail: /assets/img/prc/thumb.jpg
 permalink: /projects/prc-data-challenge/

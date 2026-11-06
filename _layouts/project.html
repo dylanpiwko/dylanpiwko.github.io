@@ -3,10 +3,10 @@ layout: default
 ---
 <section class="project-band">
   <div class="wrap">
-    <p class="back"><a href="{{ '/' | relative_url }}#projects">← All projects</a></p>
+    <p class="back"><a href="{{ '/' | relative_url }}#projects">All projects</a></p>
     <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.role }}<span class="sep">|</span>{{ page.dates }}</p>
-    {% if page.skills %}{% assign chips = page.skills | split: " · " %}<ul class="chips">{% for c in chips %}<li>{{ c }}</li>{% endfor %}</ul>{% endif %}
+    <p class="meta">{{ page.role }}<br>{{ page.dates }}</p>
+    {% if page.skills %}<p class="skills">{{ page.skills }}</p>{% endif %}
   </div>
 </section>
 
@@ -14,7 +14,7 @@ layout: default
 {{ content }}
 
   <nav class="pager">
-    {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}"><span>Previous</span>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
-    {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}"><span>Next</span>{{ page.next.title }}</a>{% endif %}
+    {% if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}"><span class="pager-label">Previous project</span> <span class="pager-title">{{ page.previous.title }}</span></a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}"><span class="pager-label">Next project</span> <span class="pager-title">{{ page.next.title }}</span></a>{% endif %}
   </nav>
 </article>
