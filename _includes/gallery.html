@@ -1,0 +1,10 @@
+{%- assign gal_imgs = include.images | split: "|" -%}
+{%- assign gal_alts = include.alts | split: "|" -%}
+<figure class="gallery">
+<div class="gallery-row" style="--h:{{ include.height | default: '280px' }}">
+{%- for im in gal_imgs %}
+<a href="{{ im | strip | relative_url }}"><img src="{{ im | strip | relative_url }}" alt="{{ gal_alts[forloop.index0] | strip }}" loading="lazy"></a>
+{%- endfor %}
+</div>
+{% if include.caption %}<figcaption>{{ include.caption | markdownify }}</figcaption>{% endif %}
+</figure>

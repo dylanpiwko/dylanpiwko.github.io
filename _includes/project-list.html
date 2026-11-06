@@ -1,0 +1,12 @@
+<div class="cards">
+{%- for p in site.projects %}
+<a class="card" href="{{ p.url | relative_url }}">
+<img src="{{ p.thumbnail | relative_url }}" alt="" loading="lazy">
+<span class="card-text">
+<span class="card-title">{{ p.title }}</span>
+<span class="card-meta">{{ p.role }}&ensp;·&ensp;{{ p.dates }}</span>
+<span class="card-summary">{{ p.summary }}</span>
+</span>
+</a>
+{%- endfor %}
+</div>
