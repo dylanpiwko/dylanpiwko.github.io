@@ -3,7 +3,7 @@ title: NASA Ames Research Center, Aeropulse
 role: Concept Design Intern, Aviation Systems Division
 dates: June – August 2025
 skills: Systems design, UAS routing, airspace integration
-summary: Our team of six designed Aeropulse, a concept that moves organs, lab samples and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots.
+summary: Our team of six designed Aeropulse, a concept that moves organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots.
 thumbnail: /assets/img/nasa/thumb.jpg
 permalink: /projects/nasa-ames-aeropulse/
 images:
@@ -20,11 +20,12 @@ images:
   caption: Sub-scale robot prototype
   w: 1.33
 what:
-- Our team of six designed **Aeropulse**, a concept that moves organs, lab samples and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots, with no manual handoffs
+- Our team of six designed **Aeropulse**, a concept that moves organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots, with no manual handoffs
 - I was one of 36 students picked from about 800 applicants for the Aviation Systems Division's Concept Design Experience
 how:
-- Examined routing constraints, urban airspace integration (UTM, geofencing, detect-and-avoid) and trade-offs between the drones and the ground robots
-- Conceptualized route planning for both vehicles, with 3-D occupancy-grid routing, GPS and SLAM for the drones and A* and Dijkstra path planning for the robots
+- I was responsible for drone routing and urban airspace integration
+- Examined routing constraints, airspace rules (UTM, geofencing, detect-and-avoid), and trade-offs between the drones and the ground robots
+- Conceptualized route planning for both vehicles, with 3-D occupancy-grid routing, GPS, and SLAM for the drones and A* and Dijkstra path planning for the robots
 - Planned for operations below 400 ft AGL under **Part 107** with BVLOS waivers
 results:
 - In our model, a donor heart gets from San Francisco General to Santa Clara Valley Medical Center in about 37 min, compared with 70 to 90+ min today
@@ -38,11 +39,11 @@ results:
 
 ## Route planning (my focus area)
 
-Before takeoff, the drone plans its whole route from Hospital A to Hospital B. It takes the start and end points, altitude limits, the weather forecast, no-fly zones and open UTM airspace, builds a 3-D occupancy grid, and finds the lowest-cost path around obstacles and restricted airspace. Then it asks UTM for emergency priority clearance.
+Before takeoff, the drone plans its whole route from Hospital A to Hospital B. It takes in the start and end points, altitude limits, the weather forecast, no-fly zones, and open UTM airspace. From those it builds a 3-D occupancy grid and finds the lowest-cost path around obstacles and restricted airspace. Then it asks UTM for emergency priority clearance.
 
 {% include figure.html src="/assets/img/nasa/fig11.png" width="620px" alt="Pre-flight route optimization: define mission, enter input data, map 3-D occupancy grid, plan global route path, request airspace clearance" caption="Pre-flight route planning (from the memo)" %}
 
-In the air, it keeps updating that map and tracks its position by fusing GPS, IMU, odometry, camera and LiDAR data with SLAM and a Kalman filter. If the weather changes, another aircraft gets in the way or a new restriction comes up, it replans and sends the new route back through UTM. If it can't continue safely, it can loiter, land somewhere low-risk, return to base or deploy a parachute.
+In the air, it keeps updating that map and tracks its position by fusing GPS, IMU, odometry, camera, and LiDAR data with SLAM and a Kalman filter. If the weather changes, another aircraft gets in the way, or a new restriction comes up, it replans and sends the new route back through UTM. If it can't continue safely, it can loiter, land somewhere low-risk, return to base, or deploy a parachute.
 
 {% include figure.html src="/assets/img/nasa/fig12.png" width="620px" alt="In-flight route optimization: assess environment, localize, assign speeds and times, fly, detect and avoid obstacles, replan if needed" caption="In-flight route planning (from the memo)" %}
 

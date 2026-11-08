@@ -17,15 +17,16 @@ images:
   w: 2.0
 what:
 - Predict aircraft taxi-out time at ten major European airports from about 2 million 2025 departures, scored by RMSE on January and July 2026 flights
-- I joined Embry-Riddle's team "merry-llama" with very little Python or machine learning experience and worked on the model for main flights (98.5% of departures)
+- I joined Embry-Riddle's team "merry-llama" with very little Python or machine learning experience
 how:
+- I was responsible for the model for main flights, which covers 98.5% of departures
 - Added **CatBoost** models alongside the team's LightGBM models
 - Built 16 departure-queue features, like how many planes took off from the same runway in the previous 5 to 20 minutes
 - Used **SHAP** on the 1,000 worst predictions, then trained an "airside" taxi-time estimate that doesn't rely on the reported off-block time
 - Decided what counted as an improvement before each test, and kept notes on what worked and what didn't across 20+ experiments
 results:
 - Lowered the team's official RMSE from 276.53 s to 267.34 s
-- Taeyun Yoo built the team's best score (265.02 s) and the final pipeline on top of this version, and the final pipeline still uses my CatBoost models and airside estimate
+- Taeyun Yoo built the team's best score (265.02 s) and the final pipeline on top of this version. The final pipeline still uses my CatBoost models and airside estimate
 ---
 
 ## Approach

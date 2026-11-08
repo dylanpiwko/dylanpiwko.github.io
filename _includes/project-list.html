@@ -7,6 +7,7 @@
 <span class="card-meta">{{ p.dates }}</span>
 <span class="card-role">{{ p.role }}</span>
 <span class="card-summary">{{ p.summary }}</span>
+{% if p.skills %}<span class="card-skills">{{ p.skills }}</span>{% endif %}
 </span>
 </a>
 {%- endfor %}

@@ -8,14 +8,14 @@ thumbnail: /assets/img/kestrel/thumb.jpg
 permalink: /projects/kestrel/
 images:
 - src: /assets/img/kestrel/kestrel_block.png
-  alt: 'Kestrel block diagram: sensors, flash, GPS, LoRa radio and four pyro channels around an RP2350B, powered from a 9 V battery through a 3.3 V buck regulator'
+  alt: 'Kestrel block diagram: sensors, flash, GPS, LoRa radio, and four pyro channels around an RP2350B, powered from a 9 V battery through a 3.3 V buck regulator'
   caption: Kestrel block diagram
 what:
 - Flight computer for my 4" Wildman Punisher 4, which I'm flying for my NAR Level 2 certification in January 2027
 - It logs data and sends live telemetry, and will eventually handle dual-deployment recovery, including a later L2200G flight that simulates to about 14,800 ft and Mach 1.7
 how:
 - Designed the schematic and 4-layer board in **KiCad** (100 × 40 mm, 145 parts)
-- RP2350B microcontroller, IMU, high-g accelerometer, two barometers, magnetometer, u-blox GPS, 915 MHz LoRa radio and flash memory
+- RP2350B microcontroller, IMU, high-g accelerometer, two barometers, magnetometer, u-blox GPS, 915 MHz LoRa radio, and flash memory
 - Four pyro channels switched on both the high and low side, behind a physical arming switch
 - 9 V input with reverse protection and a TPS54202 buck converter for 3.3 V
 - Wrote bring-up firmware and a desktop ground station with a live map
@@ -45,6 +45,6 @@ I can only afford one board revision, so before ordering I checked each subsyste
 
 ## Test plan
 
-On the first flight Kestrel only logs and transmits, and a Featherweight Blue Jay and an EasyMini handle recovery. Before I let it control a parachute, its would-fire times from flight 1 have to line up with when the commercial altimeters actually fired. It also has to fire correctly on replayed L2200G simulations without ever firing through the Mach transition, and pass vacuum chamber, inert load and ground ejection tests.
+On the first flight Kestrel only logs and transmits, and a Featherweight Blue Jay and an EasyMini handle recovery. Before I let it control a parachute, its would-fire times from flight 1 have to line up with when the commercial altimeters actually fired. It also has to fire correctly on replayed L2200G simulations without ever firing through the Mach transition, and pass vacuum chamber, inert load, and ground ejection tests.
 
 {% include figure.html src="/assets/img/kestrel/kestrel_test_program.png" alt="Four stages: bench bring-up, flight 1 for the L2 cert with Kestrel logging only, qualifying recovery, then Kestrel in control on the L2200G flight" caption="Test plan before Kestrel controls recovery" %}

@@ -23,12 +23,12 @@ what:
 - My first two-stage high-power rocket, a LOC Precision 2.26" Sandhawk sustainer on a Terrier booster (76.9 in, 2,078 g)
 - Flew it on a Cesaroni I297 and H180 at Michiana Rocketry on January 31, 2025
 how:
-- Built the avionics for electronic staging, sustainer air-start, GPS tracking and telemetry. The stages separate 1.0 s after booster burnout and the sustainer lights 0.7 s later
+- Built the avionics for electronic staging, sustainer air-start, GPS tracking, and telemetry. The stages separate 1.0 s after booster burnout and the sustainer lights 0.7 s later
 - Simulated the flight in **RockSim** to choose motors and check stability (2.40 static margin)
 - Analyzed how the 0.7 s ignition delay, which RockSim doesn't model, changes the trajectory using a 2-D point-mass model
 results:
 - The delay raised predicted apogee from about 6,590 ft to 6,860 ft
-- On the flight the stages didn't separate properly, the sustainer never lit and the upper stage was lost
+- On the flight the stages didn't separate properly, the sustainer never lit, and the upper stage was lost
 - Both 9 V batteries were on one sled that most likely slid under boost and disconnected them, which taught me the importance of redundant avionics
 ---
 
@@ -48,7 +48,7 @@ This flight taught me the importance of redundant avionics systems. Having more 
 
 RockSim lights the sustainer at the moment the stages separate, so its prediction does not include the 0.7 s wait before sustainer ignition. To model the actual sequence, the upper stage was re-flown from separation with a two-dimensional point-mass model. The sustainer's drag-to-mass ratio was taken from RockSim's coast phase as a function of Mach number, and its ignition mass was fitted to the boost phase using the H180's certified thrust curve. Run with RockSim's own timing, the model matches RockSim's apogee within 3 ft and its peak speed within 0.3%.
 
-{% include figure.html src="/assets/img/terrier/terrier_rocksim_style.png" alt="Velocity and altitude against time with lines for booster burnout, separation, sustainer ignition, sustainer burnout, apogee and ejection" caption="Predicted flight with the 1.0 s separation and 0.7 s ignition delays" %}
+{% include figure.html src="/assets/img/terrier/terrier_rocksim_style.png" alt="Velocity and altitude against time with lines for booster burnout, separation, sustainer ignition, sustainer burnout, apogee, and ejection" caption="Predicted flight with the 1.0 s separation and 0.7 s ignition delays" %}
 
 With the delay, the sustainer lights at 347 mph instead of 415 mph and peaks at 756 mph instead of 775 mph. Less of the burn happens near Mach 1, where drag is highest, so the predicted apogee rises from about 6,590 ft to 6,860 ft. A 10% change in drag moves this by about 300 ft. Because the sustainer never lit on this flight, the prediction couldn't be checked against flight data.
 
