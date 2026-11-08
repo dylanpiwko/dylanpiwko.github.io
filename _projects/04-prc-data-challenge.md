@@ -30,9 +30,9 @@ results:
 
 ## Approach
 
-I started from the team's LightGBM model for main flights and tested one addition at a time against held-out data. Before each test I decided what result would count as an improvement.
+I started from the team's LightGBM model for main flights and added one thing at a time, testing each change on held-out data. Before each test I decided what result would count as an improvement.
 
-Looking at the worst predictions with SHAP, most came from flights whose reported off-block time was more than 10 minutes off. That's why I trained an airside estimate that predicts taxi time without it.
+When I looked at the worst predictions with SHAP, most of them were flights whose reported off-block time was more than 10 minutes off. So I trained an airside estimate that doesn't use that time at all.
 
 {% include figure.html src="/assets/img/prc/prc_shap_waffle.png" width="560px" alt="Waffle chart: 82 percent of the 1,000 worst predictions had a reported off-block time more than 10 minutes wrong" caption="Worst 1,000 predictions" %}
 

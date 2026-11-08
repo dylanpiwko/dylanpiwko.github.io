@@ -38,11 +38,11 @@ results:
 
 ## Route planning (my focus area)
 
-Before each mission the drone plans its route from Hospital A to Hospital B. The inputs are the start and end coordinates, altitude limits, the weather forecast, no-fly zones and UTM airspace availability. These are compiled into a 3-D occupancy grid, the global path is planned around obstacles and restricted airspace at the lowest cost, and the drone requests emergency priority clearance through UTM.
+Before takeoff, the drone plans its whole route from Hospital A to Hospital B. It takes the start and end points, altitude limits, the weather forecast, no-fly zones and open UTM airspace, builds a 3-D occupancy grid, and finds the lowest-cost path around obstacles and restricted airspace. Then it asks UTM for emergency priority clearance.
 
 {% include figure.html src="/assets/img/nasa/fig11.png" width="620px" alt="Pre-flight route optimization: define mission, enter input data, map 3-D occupancy grid, plan global route path, request airspace clearance" caption="Pre-flight route planning (from the memo)" %}
 
-In flight, the drone keeps its map updated and fuses GPS, IMU, odometry, camera and LiDAR data with SLAM and a Kalman filter to track where it is. If the weather shifts, another aircraft conflicts or a new restriction appears, it replans and resubmits the route through UTM. If it can't continue safely, it can loiter, land at a low-risk site, return to base or deploy a parachute.
+In the air, it keeps updating that map and tracks its position by fusing GPS, IMU, odometry, camera and LiDAR data with SLAM and a Kalman filter. If the weather changes, another aircraft gets in the way or a new restriction comes up, it replans and sends the new route back through UTM. If it can't continue safely, it can loiter, land somewhere low-risk, return to base or deploy a parachute.
 
 {% include figure.html src="/assets/img/nasa/fig12.png" width="620px" alt="In-flight route optimization: assess environment, localize, assign speeds and times, fly, detect and avoid obstacles, replan if needed" caption="In-flight route planning (from the memo)" %}
 

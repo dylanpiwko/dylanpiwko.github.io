@@ -28,11 +28,11 @@ results:
 
 ## Design and verification
 
-Each pyro channel switches the e-match on both its high side and its low side, behind a physical arming switch on the airframe. A charge can only fire when the switch is closed and the processor turns on both transistors. Pull-down resistors hold every gate off while the processor boots, and a small sense current through each e-match shows continuity without firing it.
+I switched each e-match on both its high side and its low side, behind a physical arming switch on the airframe, so a charge can only fire when that switch is closed and the processor turns on both transistors. Pull-down resistors keep every gate off while the processor boots, and a small sense current through each e-match shows continuity without firing it.
 
 {% include figure.html src="/assets/img/kestrel/kestrel_pyro.png" alt="One pyro channel: 9 V supply, arming switch, high-side MOSFET, e-match, low-side MOSFET, ground" caption="One of the four pyro channels" %}
 
-Because my budget allows one board revision, I checked each subsystem against a datasheet or reference design before ordering, and planned a specific test to prove it once the boards arrive.
+I can only afford one board revision, so before ordering I checked each subsystem against a datasheet or reference design and planned a test to prove it once the boards show up.
 
 | Subsystem | Checked against | Proven at bring-up by |
 |---|---|---|
@@ -45,6 +45,6 @@ Because my budget allows one board revision, I checked each subsystem against a 
 
 ## Test plan
 
-On the first flight Kestrel only logs and transmits, while a Featherweight Blue Jay and an EasyMini handle recovery. Before it controls a parachute, its would-fire times from flight 1 have to match the commercial altimeters, it has to fire correctly on replayed simulated L2200G flights and never during the Mach transition, and it has to pass vacuum-chamber, inert-load and ground ejection tests.
+On the first flight Kestrel only logs and transmits, and a Featherweight Blue Jay and an EasyMini handle recovery. Before I let it control a parachute, its would-fire times from flight 1 have to line up with when the commercial altimeters actually fired. It also has to fire correctly on replayed L2200G simulations without ever firing through the Mach transition, and pass vacuum chamber, inert load and ground ejection tests.
 
 {% include figure.html src="/assets/img/kestrel/kestrel_test_program.png" alt="Four stages: bench bring-up, flight 1 for the L2 cert with Kestrel logging only, qualifying recovery, then Kestrel in control on the L2200G flight" caption="Test plan before Kestrel controls recovery" %}
