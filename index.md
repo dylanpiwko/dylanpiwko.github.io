@@ -7,7 +7,7 @@ I'm a first-year aerospace engineering student at the University of Michigan. I 
 
 My current project is Kestrel, a flight computer for a 4-inch rocket designed to reach Mach 1.7.
 
-This fall, I joined a team of Embry-Riddle students in the EUROCONTROL PRC Data Challenge, predicting taxi-out times at 10 European airports. In January, I'm excited to start work with Firefly Aerospace on the catch recovery system for the Eclipse launch vehicle as part of the Perot Jain TechLab.
+This fall, I joined a team of Embry-Riddle students in the EUROCONTROL PRC Data Challenge. We predicted taxi-out times at 10 European airports. In January, I'm excited to start work with Firefly Aerospace on the catch recovery system for the Eclipse launch vehicle as part of the Perot Jain TechLab.
 
 Outside of engineering, I enjoy photography and golf.
 
@@ -27,7 +27,7 @@ I was selected to work with Firefly Aerospace on the catch recovery system for t
 ### High-power rocketry
 *April 2023 – Present*
 
-I'm NAR Level 1 certified and have been flying high-power rockets since 2023, including two-stage and clustered-motor builds with dual-deployment recovery. In March 2024 I flew a 3" MAC Performance Black Fly on a CTI I223SK to about 3,500 ft at Michiana Rocketry. It was my first flight where the avionics ran head-end dual deployment.
+I'm NAR Level 1 certified. I've been flying high-power rockets since 2023, including two-stage and clustered-motor builds with dual-deployment recovery. In March 2024 I flew a 3" MAC Performance Black Fly on a CTI I223SK to about 3,500 ft at Michiana Rocketry, which was my first flight where the avionics ran head-end dual deployment.
 
 ### RC aircraft and vehicles
 *April 2024 – August 2026*

@@ -36,7 +36,7 @@ results:
 
 The stages didn't separate properly and the sustainer never lit. Since both happened on the same flight, I looked for something that could cause both.
 
-Every flight computer ran on a 9 V battery, and all of the batteries were mounted to the same sled, which wasn't secured well enough. Under boost acceleration the sled most likely slid down the airframe and disconnected both batteries, so all of the electronics lost power at once.
+Every flight computer ran on a 9 V battery, and all of the batteries were mounted to the same sled. That sled wasn't secured well enough. Under boost acceleration it most likely slid down the airframe and disconnected both batteries, so all of the electronics lost power at once.
 
 {% include figure.html src="/assets/img/terrier/terrier_fault_tree.png" width="560px" alt="Fault tree: upper stage lost, from no separation and no sustainer ignition, from both flight computers losing power, from both 9 V batteries disconnecting, from the shared sled sliding under boost" caption="How one loose sled led to both failures" %}
 

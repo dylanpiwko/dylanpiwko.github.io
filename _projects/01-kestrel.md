@@ -45,6 +45,6 @@ I can only afford one board revision, so before ordering I checked each subsyste
 
 ## Test plan
 
-On the first flight Kestrel only logs and transmits, and a Featherweight Blue Jay and an EasyMini handle recovery. Before I let it control a parachute, its would-fire times from flight 1 have to line up with when the commercial altimeters actually fired. It also has to fire correctly on replayed L2200G simulations without ever firing through the Mach transition, and pass vacuum chamber, inert load, and ground ejection tests.
+On the first flight Kestrel only logs and transmits. A Featherweight Blue Jay and an EasyMini handle recovery. Before I let it control a parachute, its would-fire times from flight 1 have to line up with when the commercial altimeters actually fired. It also has to fire correctly on replayed L2200G simulations without ever firing through the Mach transition. Then it goes through vacuum chamber, inert load, and ground ejection tests.
 
 {% include figure.html src="/assets/img/kestrel/kestrel_test_program.png" alt="Four stages: bench bring-up, flight 1 for the L2 cert with Kestrel logging only, qualifying recovery, then Kestrel in control on the L2200G flight" caption="Test plan before Kestrel controls recovery" %}
