@@ -9,7 +9,7 @@ My current project is Kestrel, a flight computer for a 4-inch rocket designed to
 
 This fall, I joined a team of Embry-Riddle students in the EUROCONTROL PRC Data Challenge. We predicted taxi-out times at 10 European airports. In January, I'm excited to start work with Firefly Aerospace on the catch recovery system for the Eclipse launch vehicle as part of the Perot Jain TechLab.
 
-Outside of engineering, I enjoy photography and golf.
+Outside of engineering, I enjoy tennis and golf.
 
 I'm looking for summer 2027 internships in GNC, unmanned systems, or systems engineering.
 

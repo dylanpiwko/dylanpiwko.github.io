@@ -4,7 +4,7 @@ role: Concept Design Intern, Aviation Systems Division
 dates: June – August 2025
 skills: Systems design, UAS routing, airspace integration
 summary: Our team of six designed Aeropulse, a concept that moves organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots.
-thumbnail: /assets/img/nasa/thumb.jpg
+thumbnail: /assets/img/nasa/thumb_cad.jpg
 permalink: /projects/nasa-ames-aeropulse/
 images:
 - src: /assets/img/nasa/fig04.jpg
@@ -15,9 +15,9 @@ images:
   alt: Map of proposed drone hubs and trauma centers around the San Francisco Bay
   caption: Proposed drone hubs (imagery © Google)
   w: 2.09
-- src: /assets/img/nasa/fig16_hi.jpg
-  alt: The team's sub-scale 3D-printed robot with tracks and a red payload lid
-  caption: Sub-scale robot prototype
+- src: /assets/img/nasa/cad_robot.jpg
+  alt: CAD render of the team's tracked hospital robot with two red payload lids
+  caption: Robot CAD model (from the memo)
   w: 1.33
 what:
 - Our team of six designed **Aeropulse**, a concept that moves organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots, with no manual handoffs
