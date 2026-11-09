@@ -2,13 +2,33 @@
 
 Source for my portfolio site at https://dylanpiwko.github.io
 
-## Editing
+## Quick edits on GitHub
 
-- About and Other work: `index.md`
-- Projects: `_projects/` (one file per project, shown in file-name order)
-- Name, headline, email, LinkedIn: `_config.yml`
-- Colors and fonts: `assets/css/style.css`
-- PDF: replace `assets/Dylan_Piwko_Portfolio.pdf`, keeping the same name
+1. Open the file on github.com (see the list below) and click the pencil icon (Edit this file).
+2. Make the change, then click **Commit changes…**, type a short message, and commit straight to `main`.
+3. Wait about a minute. The **Actions** tab shows a green check when the site has rebuilt.
+4. Open the site and hard refresh (Ctrl+Shift+R, or Cmd+Shift+R on a Mac) to see the change.
+
+To replace a picture, open its folder, click **Add file → Upload files**, and upload a file with the exact same name. To undo a bad edit, open the file's **History**, pick the last good version, and copy its text back in.
+
+If the Actions tab shows a red X, the site keeps showing the last good version. Open the failed run to see which line broke. It's usually a missing quote or a bad indent in the block at the top of a project file.
+
+## Where things are
+
+| To change | Edit |
+| --- | --- |
+| About, Other work | `index.md` |
+| A project's card, pictures, What? / How? / Results | the block at the top of its file in `_projects/` |
+| A project's longer write-up | the text below the second `---` in that file |
+| Name, headline, degree, graduation, email, LinkedIn | `_config.yml` |
+| Publications page | `publications.md` |
+| Home page header photo | `assets/img/home/north_campus.jpg` (keep the credit line in `_layouts/home.html`) |
+| Colors and fonts | `assets/css/style.css` |
+| Portfolio PDF | `assets/Dylan_Piwko_Portfolio.pdf` |
+
+Projects show on the home page in file-name order (`01-`, `02-`, …).
+
+The PDF doesn't update when the site text changes. To update it, edit the Word portfolio, delete the phone number, use **File → Save As → PDF**, and upload it to `assets/` with the same name.
 
 ## Project files
 
