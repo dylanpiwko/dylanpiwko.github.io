@@ -41,7 +41,12 @@ li > ul { margin: .3em 0 .4em; list-style-type: circle; }
 .site-header nav a:hover { color: #fff; border-bottom-color: var(--light); }
 
 /* home page */
-.hero { background: var(--navy-2); color: #fff; border-top: 1px solid rgba(255,255,255,.12); }
+.hero { position: relative; color: #fff; border-top: 1px solid rgba(255,255,255,.12);
+  background-color: var(--navy-2);
+  background-image: linear-gradient(rgba(16, 42, 79, .8), rgba(16, 42, 79, .8)), url('../img/home/north_campus.jpg');
+  background-size: cover; background-position: center 40%; }
+.hero-credit { position: absolute; right: 12px; bottom: 6px; margin: 0; font: .68rem var(--sans); color: rgba(255,255,255,.6); }
+.hero-credit a { color: rgba(255,255,255,.75); }
 .hero-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; align-items: center; padding-top: 48px; padding-bottom: 52px; }
 .hero h1 { color: #fff; font-size: 2.7rem; margin-bottom: .3em; }
 .headline { font: 1.02rem/1.5 var(--sans); color: #fff; margin-bottom: .8em; }
@@ -152,6 +157,7 @@ tr:nth-child(even) td { background: var(--tint); }
   .hero h1 { font-size: 2.2rem; }
   .project-band h1, h1 { font-size: 1.8rem; }
   .cards { grid-template-columns: 1fr; }
+  .hero-credit { position: static; padding: 0 20px 12px; text-align: right; }
   .site-header nav { gap: 4px 16px; font-size: .88rem; }
   .pub { grid-template-columns: 1fr; gap: 18px; }
   .pub-cover { max-width: 160px; }
