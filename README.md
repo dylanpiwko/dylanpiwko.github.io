@@ -18,7 +18,7 @@ The block between the `---` lines at the top of each project file sets the card 
 title: Kestrel Flight Computer
 role: Designer, Personal Project
 dates: October 2026 – Present
-skills: KiCad, PCB design, embedded C++, RF
+skills: KiCad, PCB design, RF
 summary: One sentence for the home page card.
 thumbnail: /assets/img/kestrel/thumb.jpg
 images:

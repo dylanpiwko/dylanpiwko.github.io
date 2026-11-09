@@ -2,7 +2,7 @@
 title: Kestrel Flight Computer
 role: Designer, Personal Project
 dates: October 2026 – Present
-skills: KiCad, PCB design, embedded C++, RF
+skills: KiCad, PCB design, RF
 summary: Flight computer for my 4" Wildman Punisher 4, which I'm flying for my NAR Level 2 certification in January 2027.
 thumbnail: /assets/img/kestrel/thumb.jpg
 permalink: /projects/kestrel/
@@ -21,7 +21,6 @@ how:
 - Wrote bring-up firmware and a desktop ground station with a live map
 results:
 - Zero ERC/DRC errors, with every part checked pin by pin against its datasheet and Raspberry Pi's reference design
-- Fixed everything an outside schematic review flagged
 - PCBWay is building the boards through their Future Innovators sponsorship
 - My commercial altimeters keep handling recovery until Kestrel passes ground and flight tests
 ---
@@ -41,7 +40,7 @@ I can only afford one board revision, so before ordering I checked each subsyste
 | Sensors and GPS | Each pinout and SPI mode against its datasheet; u-blox integration manual | Chip ID self-test; 3-D GPS fix |
 | Radio | Pinout; link budget of about 29 dB margin at 10 km | Ground-station range test |
 | Pyro | MOSFET ratings, gate drive, boot pull-downs | Dummy-load tests, armed and disarmed |
-| Layout | Zero ERC/DRC errors; outside review; PCBWay engineering review | Visual inspection of both assembled boards |
+| Layout | Zero ERC/DRC errors; PCBWay engineering review | Visual inspection of both assembled boards |
 
 ## Test plan
 
