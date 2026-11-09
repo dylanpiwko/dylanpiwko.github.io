@@ -3,7 +3,7 @@ layout: home
 ---
 <h2 id="about">About</h2>
 
-I'm a first-year aerospace engineering student at the University of Michigan. I fly high-power rockets, and I co-authored a NASA Technical Memorandum during my internship at NASA Ames.
+I'm a first-year aerospace engineering student at the University of Michigan. I design and fly high-power rockets, including the avionics systems, and I co-authored a NASA Technical Memorandum during my internship at NASA Ames.
 
 My current project is Kestrel, a flight computer for a 4-inch rocket designed to reach Mach 1.7.
 
