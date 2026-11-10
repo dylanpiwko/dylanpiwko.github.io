@@ -25,9 +25,9 @@ what:
 how:
 - Built the avionics for electronic staging, sustainer air-start, GPS tracking, and telemetry. The stages separate 1.0 s after booster burnout and the sustainer lights 0.7 s later
 - Simulated the flight in **RockSim** to choose motors and check stability (2.40 static margin)
-- Analyzed how the 0.7 s ignition delay, which RockSim doesn't model, changes the trajectory using a 2-D point-mass model
+- Chose the staging delays to balance visibility from the ground, altitude, and stability in wind
 results:
-- The delay raised predicted apogee from about 6,590 ft to 6,860 ft
+- With the 0.7 s ignition delay included (RockSim leaves it out), predicted apogee rises from about 6,590 ft to 6,860 ft
 - On the flight the stages didn't separate properly, the sustainer never lit, and the upper stage was lost
 - Both 9 V batteries were on one sled that most likely slid under boost and disconnected them, which taught me the importance of redundant avionics
 ---
@@ -40,7 +40,7 @@ The sustainer carried only a main parachute, held closed by a Jolly Logic Chute 
 
 My best explanation is that either the balsa sled broke or the rivets sheared. Under boost acceleration the batteries would then slide aft and pull loose from both altimeters, so all of the electronics lost power at once.
 
-{% include figure.html src="/assets/img/terrier/sustainer_cad.png" alt="3D model of the Terrier-Sandhawk sustainer cut in half lengthwise, showing the nose cone, main parachute with Chute Release, electronics bay, two 9 V batteries on a balsa sled in a coupler held by plastic rivets, igniter leads under aluminum tape, motor mount with the H180, and fins" caption="3D model of the sustainer as flown, cut in half to show the inside. Positions are approximate." %}
+{% include figure.html src="/assets/img/terrier/sustainer_cad.png" alt="3-D model of the Terrier-Sandhawk sustainer cut in half lengthwise, showing the nose cone, main parachute with Chute Release, electronics bay, two 9 V batteries on a balsa sled in a coupler held by plastic rivets, igniter leads under aluminum tape, motor mount with the H180, and fins" caption="3-D model of the sustainer as flown, cut in half to show the inside. Positions are approximate." %}
 
 {% include figure.html src="/assets/img/terrier/battery_failure_cad.png" alt="Two close-ups of the electronics bay and battery coupler. As built, both 9 V batteries are connected to the altimeters. In the failure view, the rivets have sheared, the coupler, sled, and batteries have slid aft, and the battery snaps are left behind, so the EasyMini and EasyTimer lose power" caption="The electronics bay and battery coupler as built (top) and the most likely failure during boost (bottom)" %}
 
