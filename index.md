@@ -11,8 +11,6 @@ This fall, I joined a team of Embry-Riddle students in the EUROCONTROL PRC Data 
 
 Outside of engineering, I enjoy tennis and golf.
 
-I'm looking for summer 2027 internships in GNC, unmanned systems, or systems engineering.
-
 <h2 id="projects">Projects</h2>
 
 {% include project-list.html %}
@@ -27,9 +25,9 @@ I was selected to work with Firefly Aerospace on the catch recovery system for t
 ### High-power rocketry
 *April 2023 – Present*
 
-I'm NAR Level 1 certified. I've been flying high-power rockets since 2023, including two-stage and clustered-motor builds with dual-deployment recovery. In March 2024 I flew a 3" MAC Performance Black Fly on a CTI I223SK to about 3,500 ft at Michiana Rocketry, which was my first flight where the avionics ran head-end dual deployment.
+I'm NAR Level 1 certified. I've been flying high-power rockets since 2023, including two-stage and clustered-motor builds with dual-deployment recovery. I'm now working toward my NAR Level 2 certification with a 4" Wildman Punisher 4, which will fly on a K535 to about 7,000 ft and carry my new Kestrel flight computer.
 
 ### RC aircraft and vehicles
 *April 2024 – August 2026*
 
-I build and fly electric ducted-fan and fixed-wing RC planes. I also switched an RC car from a 2S to a 4S lithium battery and re-geared it, which made it about 50% faster.
+I build and fly EDF and fixed-wing RC planes. I've also switched an RC car from a 2S to a 4S LiPo battery system and re-geared it to optimize speed and acceleration.

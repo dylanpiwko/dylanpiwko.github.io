@@ -4,7 +4,7 @@ role: Concept Design Intern, Aviation Systems Division
 dates: June – August 2025
 skills: Systems design, UAS routing, airspace integration
 summary: Our team of six designed Aeropulse, a concept that moves organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots.
-thumbnail: /assets/img/nasa/thumb_cad.jpg
+thumbnail: /assets/img/nasa/thumb_skylane.jpg
 permalink: /projects/nasa-ames-aeropulse/
 images:
 - src: /assets/img/nasa/fig04.jpg
@@ -15,9 +15,9 @@ images:
   alt: Map of proposed drone hubs and trauma centers around the San Francisco Bay
   caption: Proposed drone hubs (imagery © Google)
   w: 2.09
-- src: /assets/img/nasa/cad_robot.jpg
-  alt: CAD render of the team's tracked hospital robot with two red payload lids
-  caption: Robot CAD model (from the memo)
+- src: /assets/img/nasa/skylane.jpg
+  alt: Sky-Drones SkyLane hybrid VTOL drone parked on grass
+  caption: SkyLane hybrid VTOL, the drone we based Aeropulse on (photo © Sky-Drones)
   w: 1.33
 what:
 - Our team of six designed **Aeropulse**, a concept that moves organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots, with no manual handoffs
@@ -37,7 +37,7 @@ results:
 
 {% include figure.html src="/assets/img/nasa/fig02.png" alt="Concept strip: Hospital A, robot, drone, robot, Hospital B" caption="A robot carries the payload out of Hospital A, rides the drone, and takes it to the right room in Hospital B (from the memo)" %}
 
-## Route planning (my focus area)
+## Route planning
 
 Before takeoff, the drone plans its whole route from Hospital A to Hospital B. It takes in the start and end points, altitude limits, the weather forecast, no-fly zones, and open UTM airspace. From those it builds a 3-D occupancy grid and finds the lowest-cost path around obstacles and restricted airspace. Then it asks UTM for emergency priority clearance.
 

@@ -33,7 +33,9 @@ li > ul { margin: .3em 0 .4em; list-style-type: circle; }
 
 .site-header { background: var(--navy); }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2px 20px; padding-top: 8px; padding-bottom: 8px; }
-.site-name { color: #fff; font: 600 1.02rem var(--sans); text-decoration: none; }
+.site-mark { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 5px; background: #fff; color: var(--navy); font: 700 .95rem/1 var(--sans); letter-spacing: .02em; text-decoration: none; }
+.site-mark:hover { background: var(--light); }
+.site-mark:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 .site-header nav { display: flex; flex-wrap: wrap; gap: 4px 20px; font: .92rem var(--sans); }
 .site-header nav a { color: var(--light); text-decoration: none; padding: 8px 0 6px; border-bottom: 2px solid transparent; }
 .site-header nav a[aria-current] { color: #fff; border-bottom-color: #fff; }

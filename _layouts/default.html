@@ -16,7 +16,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap">
-      <a class="site-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <a class="site-mark" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}, home">DP</a>
       <nav aria-label="Main">
         <a href="{{ '/' | relative_url }}#projects"{% if page.layout == 'project' %} aria-current="page"{% endif %}>Projects</a>
         <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} aria-current="page"{% endif %}>Publications</a>

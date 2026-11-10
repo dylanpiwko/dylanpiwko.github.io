@@ -37,6 +37,24 @@ When I looked at the worst predictions with SHAP, most of them were flights whos
 
 {% include figure.html src="/assets/img/prc/prc_shap_waffle.png" width="560px" alt="Waffle chart: 82 percent of the 1,000 worst predictions had a reported off-block time more than 10 minutes wrong" caption="Worst 1,000 predictions" %}
 
+## Final results
+
+Our team finished 47th of 94, with an RMSE of 220.23 s. The final ranking was scored on February and June 2026 flights that never appeared on the leaderboard, so that number isn't directly comparable to the January and July scores above. The top three teams scored 176.16, 180.18, and 183.66 s.
+
+After the challenge, I read the top three teams' write-ups. Most of the gap came from things they did that we didn't:
+
+- Used public ADS-B tracks to see when each plane actually left its stand. That fixes the same off-block time problem my SHAP analysis found, and our final model didn't use ADS-B data at all.
+- Modeled which recorded taxi times were really copied schedule times. One team also recovered unmatched flights from their arrival records at the destination.
+- Averaged many neural networks or sequence models with their tree models. We only used gradient-boosted trees.
+
+In my next data challenge or machine learning project, I'd:
+
+- Look for the best raw data source before tuning the model
+- Set aside a test set at the start and never use it to make decisions
+- Find out early which small group of flights causes most of the error
+- Try more than one kind of model from the start
+
 ## Links
 
+- [Final ranking](https://ansperformance.eu/study/data-challenge/dc2026/ranking.html)
 - [Team code on GitHub](https://github.com/taeyunyoo/prc-2026-merry-llama)
