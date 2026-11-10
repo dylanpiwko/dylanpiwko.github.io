@@ -3,36 +3,43 @@ title: Kestrel Flight Computer
 role: Designer, Personal Project
 dates: October 2026 – Present
 skills: KiCad, PCB design, RF
-summary: Flight computer for my 4" Wildman Punisher 4, which I'm flying for my NAR Level 2 certification in January 2027.
+summary: A 4-layer flight computer for my Level 2 rocket. The boards are being built now, and it won't control a parachute until it passes bench and flight tests.
+intro: Kestrel is the flight computer I'm designing for my 4" Wildman Punisher 4. It's meant to log flight data, send live GPS and telemetry to the ground, and eventually run dual-deployment recovery on its own. PCBWay is building the first boards now, so none of it has been tested yet. Its first flight, my NAR Level 2 attempt in January 2027, will be logging only.
 thumbnail: /assets/img/kestrel/thumb_pcb.jpg
 permalink: /projects/kestrel/
 images:
 - src: /assets/img/kestrel/kestrel_pcb.jpg
   alt: 3-D render of the Kestrel board in KiCad, with the SMA antenna connector on the left, the RP2350B in the middle, and screw terminals for power, arming, and four pyro channels on the right
-  caption: Kestrel in KiCad (100 × 40 mm, 4 layers)
-what:
-- Flight computer for my 4" Wildman Punisher 4, which I'm flying for my NAR Level 2 certification in January 2027
-- It logs data and sends live telemetry, and will eventually handle dual-deployment recovery, including a later L2200G flight that simulates to about 14,800 ft and Mach 1.7
-how:
-- Designed the schematic and 4-layer board in **KiCad** (100 × 40 mm, 145 parts)
-- Selected an RP2350B microcontroller, IMU, high-g accelerometer, two barometers, magnetometer, u-blox GPS, 915 MHz LoRa radio, and flash memory
-- Switched each of the four pyro channels on both the high and low side, behind a physical arming switch
-- Designed the power stage around a 9 V battery, with reverse-polarity protection and a TPS54202 buck converter for 3.3 V
-results:
-- Zero ERC and DRC errors, with every part checked pin by pin against its datasheet and Raspberry Pi's reference design
-- Received a PCBWay Future Innovators sponsorship for the board order
-- My commercial altimeters keep handling recovery until Kestrel passes ground and flight tests
+  caption: Kestrel in KiCad, 100 × 40 mm with 4 layers and 145 parts
 ---
 
-## Design and verification
+## What it needs to do
 
-{% include figure.html src="/assets/img/kestrel/kestrel_block.png" alt="Kestrel block diagram: sensors, flash, GPS, LoRa radio, and four pyro channels around an RP2350B, powered from a 9 V battery through a 3.3 V buck regulator" caption="Block diagram" %}
+The Level 2 flight, on a K535 to about 7,000 ft, is the easier of the two. The rocket's real target is a later L2200G flight that simulates to about 14,800 ft and Mach 1.7, which I'll only fly once I'm certified and the earlier flights show enough margin. For that flight the board needs dual deployment with backups, GPS tracking I can follow from the ground, and clean data through boost. Commercial boards cover all of that, but usually as two separate products, which is part of why I'm building my own. There's a price comparison at the bottom of this page.
 
-I switched each e-match on both its high side and its low side, behind a physical arming switch on the airframe, so a charge can only fire when that switch is closed and the processor turns on both transistors. Pull-down resistors keep every gate off while the processor boots, and a small sense current through each e-match shows continuity without firing it.
+## Design decisions
 
-{% include figure.html src="/assets/img/kestrel/kestrel_pyro.png" alt="One pyro channel: 9 V supply, arming switch, high-side MOSFET, e-match, low-side MOSFET, ground" caption="One of the four pyro channels" %}
+{% include figure.html src="/assets/img/kestrel/kestrel_block.png" alt="Kestrel block diagram: sensors, flash, GPS, LoRa radio, and four pyro channels around an RP2350B, powered from a 9 V battery through a 3.3 V buck regulator" caption="Block diagram. Everything hangs off one RP2350B microcontroller." %}
 
-I can only afford one board revision, so before ordering I checked each subsystem against a datasheet or reference design and planned a test to prove it once the boards show up.
+Most of the board is a standard sensor package around an RP2350B: an IMU, two barometers, a magnetometer, a u-blox GPS, a 915 MHz LoRa radio, and flash memory for logging. A few parts of it took more thought.
+
+### A separate high-g accelerometer
+
+The L2200G flight should peak around 50 g. Most IMU accelerometers top out well below that, so the data would clip during boost, which is exactly when I want it. I added a separate ±200 g accelerometer to cover that part of the flight.
+
+### Pyro channels that can't fire by accident
+
+The pyro channels are the part of the board that can hurt someone. Each e-match is switched on both its high side and its low side, behind a physical arming switch on the airframe, so a charge can only fire when that switch is closed and the processor turns on both transistors. Pull-down resistors hold every gate off while the processor boots. A small sense current through each e-match shows continuity without firing it.
+
+{% include figure.html src="/assets/img/kestrel/kestrel_pyro.png" alt="One pyro channel: 9 V supply, arming switch, high-side MOSFET, e-match, low-side MOSFET, ground" caption="One of the four pyro channels. Firing takes the arming switch and both transistors." %}
+
+### Power
+
+Everything runs from a 9 V battery through reverse-polarity protection and a TPS54202 buck converter that makes 3.3 V. Once Kestrel starts firing charges, I plan to give the pyro channels their own battery.
+
+## Checking it before ordering
+
+I could only afford one board revision, so before ordering I checked each subsystem against a datasheet or reference design and wrote down the test that would prove it once the boards arrive. The design has zero ERC and DRC errors, and PCBWay's engineers reviewed it before production. PCBWay also sponsored part of the order through their Future Innovators Program.
 
 | Subsystem | Checked against | Proven at bring-up by |
 |---|---|---|
@@ -43,19 +50,19 @@ I can only afford one board revision, so before ordering I checked each subsyste
 | Pyro | MOSFET ratings, gate drive, boot pull-downs | Dummy-load tests, armed and disarmed |
 | Layout | Zero ERC/DRC errors; PCBWay engineering review | Visual inspection of both assembled boards |
 
-## Test plan
+The right-hand column is a plan. None of those tests have happened yet.
 
-On the first flight Kestrel only logs and transmits. A Featherweight Blue Jay and an EasyMini handle recovery. Before I let it control a parachute, its would-fire times from flight 1 have to line up with when the commercial altimeters actually fired. It also has to fire correctly on replayed L2200G simulations without ever firing through the Mach transition. Then it goes through vacuum chamber, inert load, and ground ejection tests.
+## Before it controls a parachute
 
-{% include figure.html src="/assets/img/kestrel/kestrel_test_program.png" alt="Four stages: bench bring-up, flight 1 for the L2 cert with Kestrel logging only, qualifying recovery, then Kestrel in control on the L2200G flight" caption="Test plan before Kestrel controls recovery" %}
+On the first flight, Kestrel only logs and transmits while a Featherweight Blue Jay and an Altus Metrum EasyMini handle recovery. Afterward, I'll compare when Kestrel would have fired with when the commercial altimeters actually did. It also has to call the right deployment times on replayed L2200G simulations without ever firing through the Mach transition, where pressure readings jump. After that come vacuum chamber, inert load, and ground ejection tests.
 
-## Long-term goals
+{% include figure.html src="/assets/img/kestrel/kestrel_test_program.png" alt="Four stages: bench bring-up, flight 1 for the L2 cert with Kestrel logging only, qualifying recovery, then Kestrel in control on the L2200G flight" caption="The order Kestrel has to earn its way into controlling recovery" %}
 
-The end goal for this board is the L2200G flight, about 14,800 ft and Mach 1.7, with Kestrel firing all of the recovery charges.
+## Where it's going
 
-After that, I want to lower the cost per board enough to build Kestrels for more than one rocket.
+The end goal for this board is the L2200G flight with Kestrel firing all of the recovery charges. After that, I want to bring the cost per board down enough to build them for more than one rocket.
 
-Eventually, I might try to turn Kestrel into a small business. I see a gap in the market for flight computers that are affordable but still capable enough for high-performance flights. Right now, a board with GPS tracking and live telemetry starts at $300, and getting four or more pyro channels too means buying the most expensive one or pairing two separate products:
+Eventually, I might try to turn Kestrel into a small business. I think there's a gap in the market for flight computers that are affordable but still capable enough for high-performance flights. Right now, a board with GPS tracking and live telemetry starts at $300, and getting four or more pyro channels too means buying the most expensive one or pairing two separate products:
 
 | Product | What it has | Price |
 |---|---|---|

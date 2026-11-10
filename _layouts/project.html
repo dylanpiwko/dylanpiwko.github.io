@@ -11,6 +11,8 @@ layout: default
 </section>
 
 <article class="wrap page-body project">
+{% if page.intro %}<p class="lede">{{ page.intro | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
+
 {% if page.images %}
   <div class="shots">
   {% for im in page.images %}
@@ -19,23 +21,6 @@ layout: default
       {% if im.caption %}<figcaption>{{ im.caption }}</figcaption>{% endif %}
     </figure>
   {% endfor %}
-  </div>
-{% endif %}
-
-{% if page.what %}
-  <div class="whr">
-    <section>
-      <h2>What?</h2>
-      <ul>{% for x in page.what %}<li>{{ x | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>
-    </section>
-    <section>
-      <h2>How?</h2>
-      <ul>{% for x in page.how %}<li>{{ x | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>
-    </section>
-    <section>
-      <h2>Results</h2>
-      <ul>{% for x in page.results %}<li>{{ x | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>
-    </section>
   </div>
 {% endif %}
 

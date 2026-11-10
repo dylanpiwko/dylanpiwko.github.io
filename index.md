@@ -3,11 +3,9 @@ layout: home
 ---
 <h2 id="about">About</h2>
 
-I'm a first-year aerospace engineering student at the University of Michigan. I design and fly high-power rockets, including the avionics systems, and I co-authored a NASA Technical Memorandum during my internship at NASA Ames.
+I'm a first-year aerospace engineering student at the University of Michigan. I've been building and flying rockets for more than five years, and high-power rockets since 2023, including a two-stage rocket and clustered-motor builds. Right now I'm designing Kestrel, a flight computer for the rocket I'll fly for my NAR Level 2 certification in January.
 
-My current project is Kestrel, a flight computer for a 4-inch rocket designed to reach Mach 1.7.
-
-This fall, I joined a team of Embry-Riddle students in the EUROCONTROL PRC Data Challenge. We predicted taxi-out times at 10 European airports. In January, I'm excited to start work with Firefly Aerospace on the catch recovery system for the Eclipse launch vehicle as part of the Perot Jain TechLab.
+Rocketry isn't the only thing I work on. In summer 2025 I was a concept design intern at NASA Ames, where our six-person team designed a drone and robot network for moving organs between hospitals, and I co-authored the NASA Technical Memorandum on it. This fall I joined an Embry-Riddle team in the EUROCONTROL PRC Data Challenge, predicting taxi-out times at ten European airports. In January I start working with Firefly Aerospace on the catch recovery system for the Eclipse launch vehicle, through the Perot Jain TechLab.
 
 Outside of engineering, I enjoy tennis and golf.
 
