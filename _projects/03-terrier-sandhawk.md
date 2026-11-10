@@ -40,7 +40,9 @@ The sustainer carried only a main parachute, held closed by a Jolly Logic Chute 
 
 My best explanation is that either the balsa sled broke or the rivets sheared. Under boost acceleration the batteries would then slide aft and pull loose from both altimeters, so all of the electronics lost power at once.
 
-{% include figure.html src="/assets/img/terrier/sustainer_section.png" alt="Section drawing of the Terrier-Sandhawk sustainer with a parts list, plus two close-ups of the electronics bay and battery coupler: as built, and during boost with the rivets sheared and both batteries slid aft, disconnected from the EasyMini and EasyTimer" caption="The sustainer as flown (top), the electronics bay and battery coupler as built (middle), and the most likely failure during boost (bottom)" %}
+{% include figure.html src="/assets/img/terrier/sustainer_cad.png" alt="3D model of the Terrier-Sandhawk sustainer cut in half lengthwise, showing the nose cone, main parachute with Chute Release, electronics bay, two 9 V batteries on a balsa sled in a coupler held by plastic rivets, igniter leads under aluminum tape, motor mount with the H180, and fins" caption="3D model of the sustainer as flown, cut in half to show the inside. Positions are approximate." %}
+
+{% include figure.html src="/assets/img/terrier/battery_failure_cad.png" alt="Two close-ups of the electronics bay and battery coupler. As built, both 9 V batteries are connected to the altimeters. In the failure view, the rivets have sheared, the coupler, sled, and batteries have slid aft, and the battery snaps are left behind, so the EasyMini and EasyTimer lose power" caption="The electronics bay and battery coupler as built (top) and the most likely failure during boost (bottom)" %}
 
 {% include figure.html src="/assets/img/terrier/terrier_fault_tree.png" width="560px" alt="Fault tree: upper stage lost, from no separation and no sustainer ignition, from both flight computers losing power, from both 9 V batteries disconnecting, from the shared sled sliding under boost" caption="How one battery mount led to both failures" %}
 
