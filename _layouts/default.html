@@ -8,7 +8,9 @@
   <meta name="theme-color" content="#0b2545">
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
   <meta property="og:description" content="{% if page.summary %}{{ page.summary | strip_html | escape }}{% else %}{{ site.description | escape }}{% endif %}">
-  <meta property="og:image" content="{{ site.url }}{% if page.thumbnail %}{{ page.thumbnail | relative_url }}{% else %}{{ '/assets/img/home/banner.jpg' | relative_url }}{% endif %}">
+  <meta property="og:image" content="{{ site.url }}{% if page.thumbnail %}{{ page.thumbnail | relative_url }}{% else %}{{ '/assets/img/home/og.jpg' | relative_url }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
