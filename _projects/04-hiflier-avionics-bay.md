@@ -7,10 +7,10 @@ summary: 3D-printed avionics bay and sensor board for an Estes Hi-Flier XL, buil
 thumbnail: /assets/img/hiflier/thumb.jpg
 permalink: /projects/hiflier-avionics-bay/
 images:
-- src: /assets/img/hiflier/drawing_exploded.png
-  alt: "Exploded section drawing of the Revision 2 bay with balloons and a parts list: bulkhead (1), rails 2a and 2c around the flight computer board, stop ring (4), and cap (3) with the 9 V battery, plus a title block"
-  caption: Exploded section drawing of Revision 2 (DXF)
-  w: 2.13
+- src: /assets/img/hiflier/cad_exploded.png
+  alt: "Exploded 3-D view of the Revision 2 bay with numbered parts and a parts list: bulkhead (1), rails 2a and 2c around the flight computer board, stop ring (4), and cap (3) holding the 9 V battery"
+  caption: Revision 2 of the bay, exploded, with a parts list
+  w: 2.18
 - src: /assets/img/hiflier/elevator_test.jpg
   alt: The powered sensor board in its printed sled during the elevator test, with its green LED on and the 9 V battery taped above it
   caption: "Elevator test: pressure altitude should step with each floor"
@@ -21,7 +21,7 @@ what:
 - An Arduino Nano Every logs acceleration (ADXL335) and pressure and temperature (BME680) to a microSD card
 how:
 - Owned the avionics bay. Designed its five parts in **AutoCAD**, printed them in PLA on a Bambu Lab A1, and integrated the board and battery
-- Laid out the team's sensor board in **KiCad**
+- Helped design the team's sensor board, laid it out in **KiCad**, and programmed it in the **Arduino IDE**
 - The board slides into two printed rails glued to a bulkhead, a cap holds the 9 V battery, and a stop ring glued in the tube keeps the sled from moving forward
 - Revision 2 adds USB notches so the hot-glued board can be reprogrammed without taking the bay apart
 results:
@@ -34,7 +34,7 @@ results:
 
 The preliminary design review placed the electronics inside a 3D-printed nose cone. The final design keeps a standard nose cone and moves the bay into a BT-60 payload tube, joined to the body tube with an Apogee AC-41.6 coupler. The sled slides in from the aft end, two M3 screws through the tube hold the bulkhead, and the stop ring keeps the sled from moving forward.
 
-{% include figure.html src="/assets/img/hiflier/drawing_section.png" alt="Section A-A drawing of the bay installed in the payload tube, cut on the board mid-plane: coupler and bulkhead on the left, the flight computer board between rails 2a and 2c, the stop ring and cap plate, and the 9 V battery, with notes and a title block" caption="Section A-A through the board mid-plane, nose end to the right. Drawn as a DXF, which opens in AutoCAD." %}
+{% include figure.html src="/assets/img/hiflier/system_cutaway.png" alt="3-D model of the Hi-Flier XL with the bay installed, cut in half lengthwise, nose to the left: nose cone, 9 V battery in the printed cap cradle, flight computer in the printed rails, bulkhead with shock-cord loop, red coupler, body tube, swept fins, and 24 mm motor mount" caption="The Hi-Flier XL with the bay installed, cut in half lengthwise. Airframe dimensions and fin shape come from the team's RockSim model." %}
 
 | Part | Job | Key detail |
 |---|---|---|
@@ -92,7 +92,7 @@ The team ran these go/no-go tests before launch:
 
 The course requires a flight on a C11 followed by a flight on a D12. The team's RockSim model includes the bay and its electronics.
 
-{% include figure.html src="/assets/img/hiflier/rocksim_predictions.png" alt="Bar charts comparing the C11-3 and D12-5: apogee 158 ft and 464 ft, max velocity 63 mph and 111 mph, velocity at deployment 11 mph and 26 mph" caption="RockSim predictions for the two required flights, plotted in Python (matplotlib)" %}
+{% include figure.html src="/assets/img/hiflier/rocksim_predictions.png" alt="Bar charts comparing the C11-3 and D12-5: apogee 158 ft and 464 ft, max velocity 63 mph and 111 mph, velocity at deployment 11 mph and 26 mph" caption="RockSim predictions for the two required flights" %}
 
 {% include figure.html src="/assets/img/hiflier/rocksim_d12.jpg" alt="RockSim side view of the Hi-Flier XL on a D12-5, 31 in long and 1.64 in in diameter, with the payload mass behind the nose cone" caption="RockSim model on the D12-5: 252.6 g, CG 19.63 in and CP 25.29 in from the nose, a stability margin of 3.45 calibers" %}
 
@@ -102,9 +102,11 @@ RockSim flags both configurations as overstable. The usual target is 1 to 2 cali
 
 The board runs from a single 9 V battery through 5 V and 3.3 V regulators. The ADXL335 accelerometer feeds the Arduino's analog inputs, and the BME680 and microSD logger connect digitally.
 
+Helping design this board and lay it out in KiCad is what sparked the interest in flight computers that led to [Kestrel](/projects/kestrel/). Along the way, teams peer-reviewed each other's boards, checking another team's design and getting feedback on their own. All of the programming was done in the Arduino IDE, first in the course's earlier labs and then for this board's flight code, which reads each sensor and logs the data to the microSD card.
+
 <div class="shots">
 <figure style="flex: 2.48 1 0"><a href="/assets/img/hiflier/kicad_3d.jpg"><img src="/assets/img/hiflier/kicad_3d.jpg" alt="KiCad 3D render of the front of the team's sensor board" loading="lazy"></a><figcaption>The sensor board in KiCad's 3D viewer</figcaption></figure>
-<figure style="flex: 1.33 1 0"><a href="/assets/img/hiflier/block_diagram_pdr.jpg"><img src="/assets/img/hiflier/block_diagram_pdr.jpg" alt="Block diagram: 9 V battery to a 5 V regulator and 3.3 V regulator, powering the accelerometer, BME680, and SD card reader, all connected to the Arduino Nano Every" loading="lazy"></a><figcaption>Team block diagram from the design review (Google Drawings)</figcaption></figure>
+<figure style="flex: 1.33 1 0"><a href="/assets/img/hiflier/block_diagram_pdr.jpg"><img src="/assets/img/hiflier/block_diagram_pdr.jpg" alt="Block diagram: 9 V battery to a 5 V regulator and 3.3 V regulator, powering the accelerometer, BME680, and SD card reader, all connected to the Arduino Nano Every" loading="lazy"></a><figcaption>Team block diagram from the design review</figcaption></figure>
 </div>
 
 ## Next: the Smarter Flyer

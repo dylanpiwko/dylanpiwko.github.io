@@ -3,7 +3,7 @@ title: NASA Ames Research Center, Aeropulse
 role: Concept Design Intern, Aviation Systems Division
 dates: June – August 2025
 skills: Systems design, UAS routing, airspace integration
-summary: Aeropulse was designed to move organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots.
+summary: Aeropulse was designed by six high school students to move organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots.
 thumbnail: /assets/img/nasa/thumb_skylane.jpg
 permalink: /projects/nasa-ames-aeropulse/
 images:
@@ -20,10 +20,11 @@ images:
   caption: SkyLane hybrid VTOL, the drone Aeropulse is based on (photo © Sky-Drones)
   w: 1.33
 what:
-- "**Aeropulse** was designed by a team of six to move organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots, with no manual handoffs"
+- "**Aeropulse** was designed by a team of six high school students from across the country to move organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots, with no manual handoffs"
 - One of 36 students selected from about 800 applicants for the Aviation Systems Division's Concept Design Experience
 how:
 - Responsible for drone routing and urban airspace integration
+- Helped conduct interviews with 20+ medical professionals to validate the concept and its operating assumptions
 - Examined routing constraints, airspace rules (UTM, geofencing, detect-and-avoid), and trade-offs between the drones and the ground robots
 - Conceptualized route planning for both vehicles, with 3-D occupancy-grid routing, GPS, and SLAM for the drones and A* and Dijkstra path planning for the robots
 - Planned for operations below 400 ft AGL under **Part 107** with BVLOS waivers
@@ -43,11 +44,11 @@ Before takeoff, the drone plans its whole route from Hospital A to Hospital B. I
 
 {% include figure.html src="/assets/img/nasa/fig11.png" width="620px" alt="Pre-flight route optimization: define mission, enter input data, map 3-D occupancy grid, plan global route path, request airspace clearance" caption="Pre-flight route planning (from the memo)" %}
 
-In the air, it keeps updating that map. It tracks its position by fusing GPS, IMU, odometry, camera, and LiDAR data with SLAM and a Kalman filter. When something changes, like the weather or another aircraft getting in the way, it replans and sends the new route back through UTM. If it can't continue safely, it can loiter, land somewhere low-risk, return to base, or deploy a parachute.
+In the air, it keeps updating that map. It tracks its position by fusing GPS, IMU, odometry, camera, and LiDAR data with SLAM and a Kalman filter. When something changes, like the weather or another aircraft getting in the way, it replans and sends the new route back through UTM. If it can't continue safely, it can loiter, land somewhere low-risk, return to base, or deploy an emergency parachute system.
 
 {% include figure.html src="/assets/img/nasa/fig12.png" width="620px" alt="In-flight route optimization: assess environment, localize, assign speeds and times, fly, detect and avoid obstacles, replan if needed" caption="In-flight route planning (from the memo)" %}
 
-{% include figure.html src="/assets/img/nasa/aero_timing.png" width="620px" alt="Bar chart: Aeropulse about 37 minutes door to door against 70 to 90+ minutes today" caption="Modeled heart transfer, San Francisco General to Santa Clara Valley Medical Center (plotted in Python, matplotlib)" %}
+{% include figure.html src="/assets/img/nasa/aero_timing.png" width="620px" alt="Bar chart: Aeropulse about 37 minutes door to door against 70 to 90+ minutes today" caption="Modeled heart transfer, San Francisco General to Santa Clara Valley Medical Center" %}
 
 ## Links
 

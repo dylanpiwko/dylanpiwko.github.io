@@ -12,7 +12,7 @@ images:
   caption: Kestrel in KiCad (100 × 40 mm, 4 layers)
 what:
 - Flight computer for a 4" Wildman Punisher 4, set to fly for a NAR Level 2 certification in January 2027
-- Kestrel logs data and sends live telemetry. It will eventually handle dual-deployment recovery, including a later L2200G flight that simulates to about 14,800 ft and Mach 1.7
+- Kestrel logs data and sends live telemetry. It will eventually handle dual-deployment recovery, including a later flight on an AeroTech L2200G motor that simulates to about 14,800 ft and Mach 1.7
 how:
 - Designed the schematic and 4-layer board in **KiCad** (100 × 40 mm, 145 parts)
 - Selected an RP2350B microcontroller, IMU, high-g accelerometer, two barometers, magnetometer, u-blox GPS, 915 MHz LoRa radio, and flash memory
@@ -26,11 +26,11 @@ results:
 
 ## Design and verification
 
-{% include figure.html src="/assets/img/kestrel/kestrel_block.png" alt="Kestrel block diagram: sensors, flash, GPS, LoRa radio, and four pyro channels around an RP2350B, powered from a 9 V battery through a 3.3 V buck regulator" caption="Block diagram (drawn in LibreOffice Draw)" %}
+{% include figure.html src="/assets/img/kestrel/kestrel_block.png" alt="Kestrel block diagram: sensors, flash, GPS, LoRa radio, and four pyro channels around an RP2350B, powered from a 9 V battery through a 3.3 V buck regulator" caption="Block diagram" %}
 
 Each e-match is switched on both its high side and its low side, behind a physical arming switch on the airframe, so a charge can only fire when that switch is closed and the processor turns on both transistors. Pull-down resistors keep every gate off while the processor boots, and a small sense current through each e-match shows continuity without firing it.
 
-{% include figure.html src="/assets/img/kestrel/kestrel_pyro.png" alt="One pyro channel: 9 V supply, arming switch, high-side MOSFET, e-match, low-side MOSFET, ground" caption="One of the four pyro channels (LibreOffice Draw)" %}
+{% include figure.html src="/assets/img/kestrel/kestrel_pyro.png" alt="One pyro channel: 9 V supply, arming switch, high-side MOSFET, e-match, low-side MOSFET, ground" caption="One of the four pyro channels" %}
 
 The budget allows one board revision, so every subsystem was checked against a datasheet or reference design before ordering, and each has a test to prove it once the boards arrive.
 
@@ -45,9 +45,9 @@ The budget allows one board revision, so every subsystem was checked against a d
 
 ## Test plan
 
-On the first flight Kestrel only logs and transmits. A Featherweight Blue Jay and an EasyMini handle recovery. Before Kestrel controls a parachute, its would-fire times from flight 1 have to line up with when the commercial altimeters actually fired. It also has to fire correctly on replayed L2200G simulations without ever firing through the Mach transition. Then it goes through vacuum chamber, inert load, and ground ejection tests.
+On the first flight, Kestrel only logs and transmits while a Featherweight Blue Jay and an EasyMini handle recovery. Before Kestrel controls a parachute, its would-fire times from flight 1 have to line up with when the commercial altimeters actually fired. It also has to fire correctly on replayed simulations of the AeroTech L2200G rocket motor flight (5,104 N·s total impulse, 2.3 s burn) without ever firing through the Mach transition. Then it goes through vacuum chamber, inert load, and ground ejection tests.
 
-{% include figure.html src="/assets/img/kestrel/kestrel_test_program.png" alt="Four stages: bench bring-up, flight 1 for the L2 cert with Kestrel logging only, qualifying recovery, then Kestrel in control on the L2200G flight" caption="Test plan before Kestrel controls recovery (LibreOffice Draw)" %}
+{% include figure.html src="/assets/img/kestrel/kestrel_test_program.png" alt="Four stages: bench bring-up, flight 1 for the L2 cert with Kestrel logging only, qualifying recovery, then Kestrel in control on the L2200G flight" caption="Test plan before Kestrel controls recovery" %}
 
 ## Long-term goals
 
@@ -55,7 +55,7 @@ The end goal for this board is the L2200G flight, about 14,800 ft and Mach 1.7, 
 
 After that, the next step is lowering the cost per board enough to build Kestrels for more than one rocket.
 
-Kestrel could eventually become a small business. There is a gap in the market for flight computers that are affordable but still capable enough for high-performance flights. Right now, a board with GPS tracking and live telemetry starts at $300, and getting four or more pyro channels too means buying the most expensive one or pairing two separate products:
+Kestrel could eventually become a small business. There is a gap in the market for flight computers that are affordable but still capable enough for high-performance flights. The closest ready-built option is the Altus Metrum TeleMega at $400, the only board below with GPS tracking, live telemetry, and four or more pyro channels. Cheaper boards give up pyro channels or need a second product for tracking:
 
 | Product | What it has | Price |
 |---|---|---|
@@ -65,3 +65,5 @@ Kestrel could eventually become a small business. There is a gap in the market f
 | [Featherweight GPS system](https://wildmanrocketry.com/products/featherweight-gps-system) | GPS tracker and ground station, no pyro channels | $420 |
 
 The Altus Metrum boards also need a separate receiver on the ground, and a Blue Raven plus a Featherweight GPS system comes to over $600. Prices are from each retailer's site in November 2026.
+
+At prototype quantities, two assembled Kestrel boards and three bare boards were quoted at about $415. With volume pricing on parts and assembly, Kestrel could sell for an estimated $250, about $150 below the TeleMega, with GPS tracking, live telemetry, and four pyro channels on one board.
