@@ -16,7 +16,7 @@ images:
   caption: Elevator test
   w: 0.56
 what:
-- Avionics bay and sensor board for an Estes Hi-Flier XL, built by a five-person team (Team 5, SpaceY) in ENGR 100 Rocket Science at the University of Michigan
+- Avionics bay and sensor board for an Estes Hi-Flier XL, built by a five-person team (Team 5, SpaceY) in [ENGR 100 Rocket Science](https://980.engr100.org/) at the University of Michigan
 - The course project centered on CAD and the payload bay, which had to hold the board and a 9 V battery with no relative motion from launch through landing
 - An Arduino Nano Every logs acceleration (ADXL335) and pressure and temperature (BME680) to a microSD card
 how:
@@ -51,7 +51,7 @@ The flight parts weigh about 19 g in PLA. Every part was checked for interferenc
 <figure style="flex: 2.36 1 0"><a href="/assets/img/hiflier/cad_sled.png"><img src="/assets/img/hiflier/cad_sled.png" alt="Rendering of the assembled sled: 9 V battery in the cap, the stop ring, the board in its rails, and the bulkhead with two M3 screws" loading="lazy"></a><figcaption>Revision 2 sled with the board and battery in place</figcaption></figure>
 </div>
 
-### Revision 2
+## Revision 2
 
 The first printed set was dry-fit with the bare board. Because the board is hot-glued into the sled, Revision 2 is aimed at a bay that ships assembled. It keeps the printed geometry and changes three things:
 
@@ -82,7 +82,7 @@ The team ran these go/no-go tests before launch:
 | Elevator | Elevator ride with a stop at each level | Pass |
 | Simulation | RockSim check of altitude and stability on the required motors | Pass |
 
-<div class="shots">
+<div class="shots" style="max-width: 460px; margin-left: auto; margin-right: auto">
 <figure style="flex: 0.47 1 0"><a href="/assets/img/hiflier/bay_in_tube_2.jpg"><img src="/assets/img/hiflier/bay_in_tube_2.jpg" alt="The finished sled with the board, sensors, and taped battery, and the red coupler fitted over the bulkhead end" loading="lazy"></a><figcaption>Finished sled with the coupler fitted</figcaption></figure>
 <figure style="flex: 0.39 1 0"><a href="/assets/img/hiflier/bay_in_tube.jpg"><img src="/assets/img/hiflier/bay_in_tube.jpg" alt="The finished sled with the coupler joined to the white body tube" loading="lazy"></a><figcaption>Coupler joined to the body tube</figcaption></figure>
 </div>
@@ -107,7 +107,3 @@ The board runs from a single 9 V battery through 5 V and 3.3 V regulators. The A
 ## Next: the Smarter Flyer
 
 The next phase of the course is a pitch for the **Smarter Flyer**, a kit built on the Hi-Flier XL for teens and anyone new to rocketry, engineering, or flight computers. It pairs a flight computer that records pressure, temperature, three-axis acceleration, and voltage with a modified rocket and an avionics bay that comes hot-glued and ready to fly. Revision 2 was drawn with that kit in mind, so the board can be reprogrammed without opening the bay.
-
-## Links
-
-- [ENGR 100-980 Rocket Science course site](https://980.engr100.org/)
