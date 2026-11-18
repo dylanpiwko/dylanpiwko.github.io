@@ -3,7 +3,7 @@ title: Terrier-Sandhawk Two-Stage Rocket
 role: Builder and Flyer, Personal Project
 dates: January 2025
 skills: RockSim, electronic staging, failure analysis
-summary: My first two-stage high-power rocket, with electronic staging and a sustainer air-start.
+summary: A first two-stage high-power rocket, with electronic staging and a sustainer air-start.
 thumbnail: /assets/img/terrier/thumb.jpg
 permalink: /projects/terrier-sandhawk/
 images:
@@ -20,7 +20,7 @@ images:
   caption: Liftoff
   w: 0.76
 what:
-- My first two-stage high-power rocket, a LOC Precision 2.26" Sandhawk sustainer on a Terrier booster (76.9 in, 2,078 g)
+- First two-stage high-power rocket, a LOC Precision 2.26" Sandhawk sustainer on a Terrier booster (76.9 in, 2,078 g)
 - Flew on a CTI I297, staging to an H180, at Michiana Rocketry on January 31, 2025
 how:
 - Built the avionics for electronic staging, sustainer air-start, GPS tracking, and telemetry. The stages separate 1.0 s after booster burnout and the sustainer lights 0.7 s later
@@ -29,16 +29,16 @@ how:
 results:
 - With the 0.7 s ignition delay included (RockSim leaves it out), predicted apogee rises from about 6,590 ft to 6,860 ft
 - On the flight the stages didn't separate properly, the sustainer never lit, and the upper stage was lost
-- Both 9 V batteries were on one sled that most likely slid under boost and disconnected them, which taught me the importance of redundant avionics
+- Both 9 V batteries were on one sled that most likely slid under boost and disconnected them, a lesson in what redundant avionics actually require
 ---
 
 ## Failure analysis
 
-The stages didn't separate properly and the sustainer never lit. Since both happened on the same flight, I looked for something that could cause both.
+The stages didn't separate properly and the sustainer never lit. Since both happened on the same flight, the search was for one cause that could explain both.
 
 The sustainer carried only a main parachute, held closed by a Jolly Logic Chute Release in the payload tube. There was no drogue. Below the payload tube, the electronics bay held an Altus Metrum EasyMini for recovery and an EasyTimer for staging, and the EasyTimer's igniter leads ran down the outside of the airframe under aluminum tape to the sustainer motor. Both altimeters ran on 9 V batteries mounted to one balsa sled, inside a coupler held in by two plastic rivets.
 
-My best explanation is that either the balsa sled broke or the rivets sheared. Under boost acceleration the batteries would then slide aft and pull loose from both altimeters, so all of the electronics lost power at once.
+The most likely explanation is that either the balsa sled broke or the rivets sheared. Under boost acceleration the batteries would then slide aft and pull loose from both altimeters, so all of the electronics lost power at once.
 
 {% include figure.html src="/assets/img/terrier/sustainer_cad.png" alt="3-D model of the Terrier-Sandhawk sustainer cut in half lengthwise, showing the nose cone, main parachute with Chute Release, electronics bay, two 9 V batteries on a balsa sled in a coupler held by plastic rivets, igniter leads under aluminum tape, motor mount with the H180, and fins" caption="3-D model of the sustainer as flown, cut in half to show the inside. Positions are approximate." %}
 
@@ -46,11 +46,11 @@ My best explanation is that either the balsa sled broke or the rivets sheared. U
 
 {% include figure.html src="/assets/img/terrier/terrier_fault_tree.png" width="560px" alt="Fault tree: upper stage lost, from no separation and no sustainer ignition, from both flight computers losing power, from both 9 V batteries disconnecting, from the shared sled sliding under boost" caption="How one battery mount led to both failures" %}
 
-This flight taught me the importance of redundant avionics systems. Having more than one flight computer didn't help, because they all depended on the same mount.
+Redundant avionics only help when they don't share a single point of failure. Having more than one flight computer didn't help here, because both depended on the same mount.
 
 ## Staging delay analysis
 
-The EasyTimer let me set the staging delays myself, so I had to decide what they should be. I wanted a flight that looked good and went high. To me, looking good meant you could clearly see each event from the ground: booster burnout, then separation, then the sustainer lighting. Spacing them farther apart makes each one easier to see, and some delay can add altitude. But the longer the sustainer coasts without thrust, the slower it's going when it lights, and the easier it is for wind to push it off course. I still want to be able to fly in conditions that aren't perfect, so I settled on 1.0 s from booster burnout to separation and another 0.7 s to sustainer ignition.
+The EasyTimer allows custom staging delays, so the delays were a design choice. The goal was a flight that looked good and went high, and looking good meant each event could be seen clearly from the ground: booster burnout, then separation, then the sustainer lighting. Spacing them farther apart makes each one easier to see, and some delay can add altitude. But the longer the sustainer coasts without thrust, the slower it's going when it lights, and the easier it is for wind to push it off course. To keep the rocket flyable in conditions that aren't perfect, the delays were set at 1.0 s from booster burnout to separation and another 0.7 s to sustainer ignition.
 
 {% include figure.html src="/assets/img/terrier/rocksim_profile.png" alt="RockSim side view: sustainer and nose cone on the left, booster with orange fins on the right" caption="RockSim model of the full stack, sustainer on the left. The CG (52.5 in from the nose) is 5.4 in ahead of the CP (57.9 in), a static margin of 2.40." %}
 

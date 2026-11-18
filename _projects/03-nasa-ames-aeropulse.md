@@ -3,7 +3,7 @@ title: NASA Ames Research Center, Aeropulse
 role: Concept Design Intern, Aviation Systems Division
 dates: June – August 2025
 skills: Systems design, UAS routing, airspace integration
-summary: Our team of six designed Aeropulse, a concept that moves organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots.
+summary: Aeropulse was designed to move organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots.
 thumbnail: /assets/img/nasa/thumb_skylane.jpg
 permalink: /projects/nasa-ames-aeropulse/
 images:
@@ -17,18 +17,18 @@ images:
   w: 2.09
 - src: /assets/img/nasa/skylane.jpg
   alt: Sky-Drones SkyLane hybrid VTOL drone parked on grass
-  caption: SkyLane hybrid VTOL, the drone we based Aeropulse on (photo © Sky-Drones)
+  caption: SkyLane hybrid VTOL, the drone Aeropulse is based on (photo © Sky-Drones)
   w: 1.33
 what:
-- Our team of six designed **Aeropulse**, a concept that moves organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots, with no manual handoffs
-- I was one of 36 students picked from about 800 applicants for the Aviation Systems Division's Concept Design Experience
+- "**Aeropulse** was designed by a team of six to move organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots, with no manual handoffs"
+- One of 36 students selected from about 800 applicants for the Aviation Systems Division's Concept Design Experience
 how:
-- I was responsible for drone routing and urban airspace integration
+- Responsible for drone routing and urban airspace integration
 - Examined routing constraints, airspace rules (UTM, geofencing, detect-and-avoid), and trade-offs between the drones and the ground robots
 - Conceptualized route planning for both vehicles, with 3-D occupancy-grid routing, GPS, and SLAM for the drones and A* and Dijkstra path planning for the robots
 - Planned for operations below 400 ft AGL under **Part 107** with BVLOS waivers
 results:
-- In our model, a donor heart gets from San Francisco General to Santa Clara Valley Medical Center in about 37 min, compared with 70 to 90+ min today
+- In the team's model, a donor heart gets from San Francisco General to Santa Clara Valley Medical Center in about 37 min, compared with 70 to 90+ min today
 - Presented the design to 50+ NASA staff
 - Co-authored NASA/TM-20250009029 with the rest of the team
 ---

@@ -3,13 +3,13 @@ layout: home
 ---
 <h2 id="about">About</h2>
 
-I'm a first-year aerospace engineering student at the University of Michigan. I design and fly high-power rockets, including the avionics systems, and I co-authored a NASA Technical Memorandum during my internship at NASA Ames.
+First-year aerospace engineering student at the University of Michigan. Designs and flies high-power rockets, including their avionics, and co-authored a NASA Technical Memorandum as a concept design intern at NASA Ames.
 
-My current project is Kestrel, a flight computer for a 4-inch rocket designed to reach Mach 1.7.
+Current project: Kestrel, a flight computer for a 4-inch rocket designed to reach Mach 1.7.
 
-This fall, I joined a team of Embry-Riddle students in the EUROCONTROL PRC Data Challenge. We predicted taxi-out times at 10 European airports. In January, I'm excited to start work with Firefly Aerospace on the catch recovery system for the Eclipse launch vehicle as part of the Perot Jain TechLab.
+Fall 2026 also included a 3D-printed avionics bay for ENGR 100 Rocket Science and the EUROCONTROL PRC Data Challenge, predicting taxi-out times at 10 European airports with a team of Embry-Riddle students. Starting in January, work with Firefly Aerospace on the catch recovery system for the Eclipse launch vehicle, as part of the Perot Jain TechLab.
 
-Outside of engineering, I enjoy tennis and golf.
+Outside of engineering: tennis and golf.
 
 <h2 id="projects">Projects</h2>
 
@@ -20,14 +20,14 @@ Outside of engineering, I enjoy tennis and golf.
 ### Firefly Aerospace, Eclipse catch recovery
 *Perot Jain TechLab, starting January 2027*
 
-I was selected to work with Firefly Aerospace on the catch recovery system for the Eclipse launch vehicle.
+Selected to work with Firefly Aerospace on the catch recovery system for the Eclipse launch vehicle.
 
 ### High-power rocketry
 *April 2023 – Present*
 
-I'm NAR Level 1 certified. I've been flying high-power rockets since 2023, including two-stage and clustered-motor builds with dual-deployment recovery. I'm now working toward my NAR Level 2 certification with a 4" Wildman Punisher 4, which will fly on a K535 to about 7,000 ft and carry my new Kestrel flight computer.
+NAR Level 1 certified, flying high-power rockets since 2023, including two-stage and clustered-motor builds with dual-deployment recovery. Next is NAR Level 2 with a 4" Wildman Punisher 4, which will fly on a K535 to about 7,000 ft carrying the new Kestrel flight computer.
 
 ### RC aircraft and vehicles
 *April 2024 – August 2026*
 
-I build and fly EDF and fixed-wing RC planes. I've also switched an RC car from a 2S to a 4S LiPo battery system and re-geared it to optimize speed and acceleration.
+Builds and flies EDF and fixed-wing RC planes. Also converted an RC car from a 2S to a 4S LiPo battery system and re-geared it to optimize speed and acceleration.
