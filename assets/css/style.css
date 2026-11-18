@@ -92,6 +92,8 @@ table { width: 100%; border-collapse: collapse; margin: 1em 0 1.6em; font-size: 
 th, td { border: 1px solid var(--rule); padding: 7px 10px; text-align: left; vertical-align: top; }
 th { background: var(--navy); color: #fff; font: 600 .85rem var(--sans); border-color: var(--navy); }
 tr:nth-child(even) td { background: var(--tint); }
+table.tests { font-size: 1rem; line-height: 1.5; }
+table.tests td { padding: 9px 12px; }
 
 .pager { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 3em; padding-top: 1.2em; border-top: 1px solid var(--rule); }
 .pager a { display: block; text-decoration: none; }
@@ -103,6 +105,8 @@ tr:nth-child(even) td { background: var(--tint); }
 .shots { display: flex; gap: 12px; align-items: flex-end; margin: 28px 0 6px; }
 .shots figure { margin: 0; min-width: 0; }
 .shots figure:only-child { max-width: 760px; margin: 0 auto; }
+.shots.mid { max-width: 660px; margin-left: auto; margin-right: auto; }
+.shots.narrow { max-width: 560px; margin-left: auto; margin-right: auto; }
 .shots img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); background: #fff; }
 .shots figcaption { margin-top: .45em; }
 .whr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 26px 0 10px; padding: 18px 22px 20px; background: var(--tint); border-top: 3px solid var(--navy); }

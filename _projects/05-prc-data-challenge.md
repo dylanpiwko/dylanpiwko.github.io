@@ -9,12 +9,12 @@ permalink: /projects/prc-data-challenge/
 images:
 - src: /assets/img/prc/prc_model.png
   alt: Diagram of the team's model with my additions shaded blue
-  caption: Team model, my additions in blue
+  caption: Team model, my additions in blue (LibreOffice Draw)
   w: 1.8
 - src: /assets/img/prc/prc_versions.png
   alt: Held-out December RMSE falling with each model version
-  caption: Held-out error by version (gray points came after the deadline)
-  w: 2.0
+  caption: Held-out error by version, gray after the deadline (Python, matplotlib)
+  w: 1.7
 what:
 - Predict aircraft taxi-out time at ten major European airports from about 2 million 2025 departures, scored by RMSE on January and July 2026 flights
 - Joined Embry-Riddle's team "merry-llama" with very little Python or machine learning experience
@@ -35,7 +35,7 @@ The starting point was the team's LightGBM model for main flights. Changes went 
 
 SHAP on the worst predictions showed that most of them were flights whose reported off-block time was more than 10 minutes off. So the airside estimate was trained without that time at all.
 
-{% include figure.html src="/assets/img/prc/prc_shap_waffle.png" width="560px" alt="Waffle chart: 82 percent of the 1,000 worst predictions had a reported off-block time more than 10 minutes wrong" caption="Worst 1,000 predictions" %}
+{% include figure.html src="/assets/img/prc/prc_shap_waffle.png" width="560px" alt="Waffle chart: 82 percent of the 1,000 worst predictions had a reported off-block time more than 10 minutes wrong" caption="Worst 1,000 predictions (Python, matplotlib)" %}
 
 ## Final results
 

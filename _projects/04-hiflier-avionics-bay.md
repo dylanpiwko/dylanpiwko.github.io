@@ -7,13 +7,13 @@ summary: 3D-printed avionics bay and sensor board for an Estes Hi-Flier XL, buil
 thumbnail: /assets/img/hiflier/thumb.jpg
 permalink: /projects/hiflier-avionics-bay/
 images:
-- src: /assets/img/hiflier/cad_exploded.png
-  alt: Exploded view of the Revision 2 avionics bay. From left, the blue bulkhead with a shock-cord loop, the two purple rails with the green flight computer board between them, the red stop ring, and the orange cap holding a 9 V battery
-  caption: Revision 2 of the bay, exploded, with a parts list
-  w: 2.18
+- src: /assets/img/hiflier/drawing_exploded.png
+  alt: "Exploded section drawing of the Revision 2 bay with balloons and a parts list: bulkhead (1), rails 2a and 2c around the flight computer board, stop ring (4), and cap (3) with the 9 V battery, plus a title block"
+  caption: Exploded section drawing of Revision 2 (DXF)
+  w: 2.13
 - src: /assets/img/hiflier/elevator_test.jpg
   alt: The powered sensor board in its printed sled during the elevator test, with its green LED on and the 9 V battery taped above it
-  caption: Elevator test
+  caption: "Elevator test: pressure altitude should step with each floor"
   w: 0.56
 what:
 - Avionics bay and sensor board for an Estes Hi-Flier XL, built by a five-person team (Team 5, SpaceY) in [ENGR 100 Rocket Science](https://980.engr100.org/) at the University of Michigan
@@ -34,7 +34,7 @@ results:
 
 The preliminary design review placed the electronics inside a 3D-printed nose cone. The final design keeps a standard nose cone and moves the bay into a BT-60 payload tube, joined to the body tube with an Apogee AC-41.6 coupler. The sled slides in from the aft end, two M3 screws through the tube hold the bulkhead, and the stop ring keeps the sled from moving forward.
 
-{% include figure.html src="/assets/img/hiflier/cad_section.png" alt="Section view of the bay installed in the payload tube. The coupler is on the left, then the bulkhead held by two M3 screws, the flight computer in its rails, the stop ring glued in the tube, and the 9 V battery in the cap cradle, with empty tube toward the nose on the right" caption="The bay installed, with the tube and coupler cut in half. Nose end to the right." %}
+{% include figure.html src="/assets/img/hiflier/drawing_section.png" alt="Section A-A drawing of the bay installed in the payload tube, cut on the board mid-plane: coupler and bulkhead on the left, the flight computer board between rails 2a and 2c, the stop ring and cap plate, and the 9 V battery, with notes and a title block" caption="Section A-A through the board mid-plane, nose end to the right. Drawn as a DXF, which opens in AutoCAD." %}
 
 | Part | Job | Key detail |
 |---|---|---|
@@ -46,9 +46,9 @@ The preliminary design review placed the electronics inside a 3D-printed nose co
 
 The flight parts weigh about 19 g in PLA. Every part was checked for interference in CAD against the catalog sizes of the tube and coupler before printing.
 
-<div class="shots">
-<figure style="flex: 1.9 1 0"><a href="/assets/img/hiflier/autocad_bulkhead_cap.jpg"><img src="/assets/img/hiflier/autocad_bulkhead_cap.jpg" alt="AutoCAD 3D view of the bulkhead, showing the shock-cord loop and the slots that hold the rails" loading="lazy"></a><figcaption>Bulkhead in AutoCAD, with the shock-cord loop and rail slots</figcaption></figure>
-<figure style="flex: 2.36 1 0"><a href="/assets/img/hiflier/cad_sled.png"><img src="/assets/img/hiflier/cad_sled.png" alt="Rendering of the assembled sled: 9 V battery in the cap, the stop ring, the board in its rails, and the bulkhead with two M3 screws" loading="lazy"></a><figcaption>Revision 2 sled with the board and battery in place</figcaption></figure>
+<div class="shots mid">
+<figure style="flex: 1.38 1 0"><a href="/assets/img/hiflier/autocad_bulkhead.jpg"><img src="/assets/img/hiflier/autocad_bulkhead.jpg" alt="AutoCAD 3D view of the bulkhead, showing the shock-cord loop, the rail slots, and a screw hole in the side wall" loading="lazy"></a><figcaption>Bulkhead in AutoCAD, with the shock-cord loop and rail slots</figcaption></figure>
+<figure style="flex: 0.64 1 0"><a href="/assets/img/hiflier/autocad_cap.jpg"><img src="/assets/img/hiflier/autocad_cap.jpg" alt="AutoCAD 3D view of the cap: a round plate with slots at the bottom and a tall spine with three diamond-shaped windows" loading="lazy"></a><figcaption>Cap and battery cradle in AutoCAD</figcaption></figure>
 </div>
 
 ## Revision 2
@@ -73,27 +73,30 @@ The parts were printed in PLA at the U-M 3D Printing Club, at 0.20 mm layers wit
 
 The team ran these go/no-go tests before launch:
 
-| Test | Method | Result |
-|---|---|---|
-| Bench | Board powered on the bench, checking that it logs data and the LEDs work | Pass |
-| Spike, accelerometer | Board shaken along each axis | Pass |
-| Spike, BME680 | A warm finger on the sensor for temperature, a breath on it for pressure | Pass |
-| Pendulum | Board and battery mounted and swung on strings of different lengths | Pass |
-| Elevator | Elevator ride with a stop at each level | Pass |
-| Simulation | RockSim check of altitude and stability on the required motors | Pass |
+| Test | Method | What it checks | Result |
+|---|---|---|---|
+| Bench | Board powered on the bench | Power, status LEDs, and logging to the microSD card all work before anything moves | Pass |
+| Spike, accelerometer | Board shaken along each axis in turn | Each of the three ADXL335 axes responds, on the right channel | Pass |
+| Spike, BME680 | A warm finger on the sensor, then a breath on it | Temperature and pressure readings both react to a quick change | Pass |
+| Pendulum | Board and battery mounted and swung on strings of different lengths | The logged swing follows the known motion, and the board and battery stay put while moving | Pass |
+| Elevator | Elevator ride with a stop at each floor | Pressure, and the altitude worked out from it, step with each floor | Pass |
+| Simulation | RockSim model with the bay on the required motors | Altitude and stability margin are acceptable on the C11-3 and D12-5 | Pass |
+{: .tests}
 
-<div class="shots" style="max-width: 460px; margin-left: auto; margin-right: auto">
-<figure style="flex: 0.47 1 0"><a href="/assets/img/hiflier/bay_in_tube_2.jpg"><img src="/assets/img/hiflier/bay_in_tube_2.jpg" alt="The finished sled with the board, sensors, and taped battery, and the red coupler fitted over the bulkhead end" loading="lazy"></a><figcaption>Finished sled with the coupler fitted</figcaption></figure>
-<figure style="flex: 0.39 1 0"><a href="/assets/img/hiflier/bay_in_tube.jpg"><img src="/assets/img/hiflier/bay_in_tube.jpg" alt="The finished sled with the coupler joined to the white body tube" loading="lazy"></a><figcaption>Coupler joined to the body tube</figcaption></figure>
+<div class="shots narrow">
+<figure style="flex: 0.47 1 0"><a href="/assets/img/hiflier/bay_in_tube_2.jpg"><img src="/assets/img/hiflier/bay_in_tube_2.jpg" alt="The finished sled, nose end up: taped 9 V battery at the top, then the cap, board, and sensors, with the red coupler fitted over the bulkhead at the bottom" loading="lazy"></a><figcaption>Finished sled with the coupler fitted, nose end up</figcaption></figure>
+<figure style="flex: 0.39 1 0"><a href="/assets/img/hiflier/bay_in_tube.jpg"><img src="/assets/img/hiflier/bay_in_tube.jpg" alt="The finished sled, nose end up, with the coupler at the bottom joined to the white body tube" loading="lazy"></a><figcaption>Coupler joined to the body tube below</figcaption></figure>
 </div>
 
 ## Flight simulation
 
 The course requires a flight on a C11 followed by a flight on a D12. The team's RockSim model includes the bay and its electronics.
 
-{% include figure.html src="/assets/img/hiflier/rocksim_predictions.png" alt="Bar charts comparing the C11-3 and D12-5: apogee 158 ft and 464 ft, max velocity 63 mph and 111 mph, velocity at deployment 11 mph and 26 mph" caption="RockSim predictions for the two required flights" %}
+{% include figure.html src="/assets/img/hiflier/rocksim_predictions.png" alt="Bar charts comparing the C11-3 and D12-5: apogee 158 ft and 464 ft, max velocity 63 mph and 111 mph, velocity at deployment 11 mph and 26 mph" caption="RockSim predictions for the two required flights, plotted in Python (matplotlib)" %}
 
 {% include figure.html src="/assets/img/hiflier/rocksim_d12.jpg" alt="RockSim side view of the Hi-Flier XL on a D12-5, 31 in long and 1.64 in in diameter, with the payload mass behind the nose cone" caption="RockSim model on the D12-5: 252.6 g, CG 19.63 in and CP 25.29 in from the nose, a stability margin of 3.45 calibers" %}
+
+RockSim flags both configurations as overstable. The usual target is 1 to 2 calibers, and a higher margin makes the rocket weathercock, turning more into the wind after it leaves the rod. For low, slow flights like these, 3.45 to 3.64 calibers is acceptable.
 
 ## Sensor board
 
@@ -101,7 +104,7 @@ The board runs from a single 9 V battery through 5 V and 3.3 V regulators. The A
 
 <div class="shots">
 <figure style="flex: 2.48 1 0"><a href="/assets/img/hiflier/kicad_3d.jpg"><img src="/assets/img/hiflier/kicad_3d.jpg" alt="KiCad 3D render of the front of the team's sensor board" loading="lazy"></a><figcaption>The sensor board in KiCad's 3D viewer</figcaption></figure>
-<figure style="flex: 1.33 1 0"><a href="/assets/img/hiflier/block_diagram_pdr.jpg"><img src="/assets/img/hiflier/block_diagram_pdr.jpg" alt="Block diagram: 9 V battery to a 5 V regulator and 3.3 V regulator, powering the accelerometer, BME680, and SD card reader, all connected to the Arduino Nano Every" loading="lazy"></a><figcaption>Team block diagram from the design review</figcaption></figure>
+<figure style="flex: 1.33 1 0"><a href="/assets/img/hiflier/block_diagram_pdr.jpg"><img src="/assets/img/hiflier/block_diagram_pdr.jpg" alt="Block diagram: 9 V battery to a 5 V regulator and 3.3 V regulator, powering the accelerometer, BME680, and SD card reader, all connected to the Arduino Nano Every" loading="lazy"></a><figcaption>Team block diagram from the design review (Google Drawings)</figcaption></figure>
 </div>
 
 ## Next: the Smarter Flyer

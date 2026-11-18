@@ -47,7 +47,7 @@ In the air, it keeps updating that map. It tracks its position by fusing GPS, IM
 
 {% include figure.html src="/assets/img/nasa/fig12.png" width="620px" alt="In-flight route optimization: assess environment, localize, assign speeds and times, fly, detect and avoid obstacles, replan if needed" caption="In-flight route planning (from the memo)" %}
 
-{% include figure.html src="/assets/img/nasa/aero_timing.png" width="620px" alt="Bar chart: Aeropulse about 37 minutes door to door against 70 to 90+ minutes today" caption="Modeled heart transfer, San Francisco General to Santa Clara Valley Medical Center" %}
+{% include figure.html src="/assets/img/nasa/aero_timing.png" width="620px" alt="Bar chart: Aeropulse about 37 minutes door to door against 70 to 90+ minutes today" caption="Modeled heart transfer, San Francisco General to Santa Clara Valley Medical Center (plotted in Python, matplotlib)" %}
 
 ## Links
 

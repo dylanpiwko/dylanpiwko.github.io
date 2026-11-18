@@ -26,11 +26,11 @@ results:
 
 ## Design and verification
 
-{% include figure.html src="/assets/img/kestrel/kestrel_block.png" alt="Kestrel block diagram: sensors, flash, GPS, LoRa radio, and four pyro channels around an RP2350B, powered from a 9 V battery through a 3.3 V buck regulator" caption="Block diagram" %}
+{% include figure.html src="/assets/img/kestrel/kestrel_block.png" alt="Kestrel block diagram: sensors, flash, GPS, LoRa radio, and four pyro channels around an RP2350B, powered from a 9 V battery through a 3.3 V buck regulator" caption="Block diagram (drawn in LibreOffice Draw)" %}
 
 Each e-match is switched on both its high side and its low side, behind a physical arming switch on the airframe, so a charge can only fire when that switch is closed and the processor turns on both transistors. Pull-down resistors keep every gate off while the processor boots, and a small sense current through each e-match shows continuity without firing it.
 
-{% include figure.html src="/assets/img/kestrel/kestrel_pyro.png" alt="One pyro channel: 9 V supply, arming switch, high-side MOSFET, e-match, low-side MOSFET, ground" caption="One of the four pyro channels" %}
+{% include figure.html src="/assets/img/kestrel/kestrel_pyro.png" alt="One pyro channel: 9 V supply, arming switch, high-side MOSFET, e-match, low-side MOSFET, ground" caption="One of the four pyro channels (LibreOffice Draw)" %}
 
 The budget allows one board revision, so every subsystem was checked against a datasheet or reference design before ordering, and each has a test to prove it once the boards arrive.
 
@@ -47,7 +47,7 @@ The budget allows one board revision, so every subsystem was checked against a d
 
 On the first flight Kestrel only logs and transmits. A Featherweight Blue Jay and an EasyMini handle recovery. Before Kestrel controls a parachute, its would-fire times from flight 1 have to line up with when the commercial altimeters actually fired. It also has to fire correctly on replayed L2200G simulations without ever firing through the Mach transition. Then it goes through vacuum chamber, inert load, and ground ejection tests.
 
-{% include figure.html src="/assets/img/kestrel/kestrel_test_program.png" alt="Four stages: bench bring-up, flight 1 for the L2 cert with Kestrel logging only, qualifying recovery, then Kestrel in control on the L2200G flight" caption="Test plan before Kestrel controls recovery" %}
+{% include figure.html src="/assets/img/kestrel/kestrel_test_program.png" alt="Four stages: bench bring-up, flight 1 for the L2 cert with Kestrel logging only, qualifying recovery, then Kestrel in control on the L2200G flight" caption="Test plan before Kestrel controls recovery (LibreOffice Draw)" %}
 
 ## Long-term goals
 
