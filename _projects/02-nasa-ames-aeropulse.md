@@ -3,7 +3,7 @@ title: NASA Ames Research Center, Aeropulse
 role: Concept Design Intern, Aviation Systems Division
 dates: June – August 2025
 skills: Systems design, UAS routing, airspace integration
-summary: Aeropulse was designed by six high school students to move organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots.
+summary: Aeropulse was designed by me and five other high school students from across the country, led by two NASA mentors, to move organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots.
 thumbnail: /assets/img/nasa/thumb_skylane.jpg
 permalink: /projects/nasa-ames-aeropulse/
 images:
@@ -20,7 +20,7 @@ images:
   caption: SkyLane hybrid VTOL, the drone Aeropulse is based on (photo © Sky-Drones)
   w: 1.33
 what:
-- "**Aeropulse** was designed by a team of six high school students from across the country to move organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots, with no manual handoffs"
+- "**Aeropulse** was designed by me and five other high school students from across the country, led by two NASA mentors, to move organs, lab samples, and urgent medicine between hospitals with hybrid VTOL drones and stair-climbing robots, with no manual handoffs"
 - One of 36 students selected from about 800 applicants for the Aviation Systems Division's Concept Design Experience
 how:
 - Responsible for drone routing and urban airspace integration
